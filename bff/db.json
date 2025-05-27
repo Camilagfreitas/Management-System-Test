@@ -1,0 +1,105 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Administrador",
+      "email": "admin@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "a752",
+      "name": "Camila",
+      "email": "camila@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "24cc",
+      "name": "Carla",
+      "email": "carla@email.com",
+      "password": "123456"
+    },
+    {
+      "id": "6d8f",
+      "name": "Antonio",
+      "email": "antonio@email.com",
+      "password": "123456"
+    },
+    {
+      "id": "d322",
+      "name": "teste",
+      "email": "teste@mail.com",
+      "password": "123456"
+    },
+    {
+      "id": "877d",
+      "name": "João",
+      "email": "joao@email.com",
+      "password": "1234567"
+    },
+    {
+      "id": "d45c",
+      "name": "A",
+      "email": "c_f@e.com",
+      "password": "minhasenha123"
+    },
+    {
+      "id": "2ed7",
+      "name": "Aa",
+      "email": "a@a.com",
+      "password": "1234567"
+    },
+    {
+      "id": "5090",
+      "name": "Agnes",
+      "email": "agnes@email.com",
+      "password": "minhasenha123"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "2",
+      "userId": "a752",
+      "title": "Comprar pão",
+      "description": "Ir ao mercado",
+      "category": "Pessoal",
+      "priority": "Média",
+      "status": "Completed"
+    },
+    {
+      "id": "2414",
+      "title": "Estudar React Native",
+      "description": "estudar react",
+      "category": "Trabalho",
+      "priority": "Alta",
+      "status": "Pending",
+      "userId": "1"
+    },
+    {
+      "id": "09f5",
+      "title": "Comprar ração",
+      "description": "Comprar ração para o gato",
+      "category": "Pessoal",
+      "priority": "Média",
+      "status": "Completed",
+      "userId": "1"
+    },
+    {
+      "id": "27b5",
+      "title": "Estudar Angular",
+      "description": "Estudar angular",
+      "category": "Trabalho",
+      "priority": "Média",
+      "status": "Pending",
+      "userId": "1"
+    },
+    {
+      "id": "477d",
+      "title": "Comprar água",
+      "description": "Comprar água",
+      "category": "Pessoal",
+      "priority": "Alta",
+      "status": "Completed",
+      "userId": "1"
+    }
+  ]
+}
