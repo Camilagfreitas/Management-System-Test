@@ -1,24 +1,20 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
-import { useState } from "react";
-import { useUpdateTask } from "../hooks/useTask"; // seu hook para update
+import type { Task } from "../types/task";
+import { useUpdateTask } from "../hooks/useTask";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-interface Task {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  priority: "High" | "Medium" | "Low";
-  userId: string;
-  status: string;
-}
+const taskSchema = z.object({
+  title: z.string().min(1, "Título é obrigatório"),
+  description: z.string().min(1, "Descrição é obrigatória"),
+  category: z.enum(["Work", "Personal", "Study"]),
+  priority: z.enum(["High", "Medium", "Low"]),
+});
+
+type TaskForm = z.infer<typeof taskSchema>;
 
 interface EditTaskModalProps {
   isOpen: boolean;
@@ -27,25 +23,29 @@ interface EditTaskModalProps {
 }
 
 export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalProps) {
-  const [title, setTitle] = useState(task.title);
-  const [description, setDescription] = useState(task.description);
-  const [category, setCategory] = useState(task.category);
-  const [priority, setPriority] = useState<"High" | "Medium" | "Low">(task.priority);
-
   const updateTask = useUpdateTask();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset
+  } = useForm<TaskForm>({
+    resolver: zodResolver(taskSchema),
+    defaultValues: {
+      title: task.title,
+      description: task.description,
+      category: task.category as "Work" | "Personal" | "Study",
+      priority: task.priority,
+    },
+  });
 
-  const handleSubmit = () => {
-    if (!title || !description || !category || !priority) return;
-
+  const onSubmit = (data: TaskForm) => {
     updateTask.mutate(
       {
         id: task.id,
-        title,
-        description,
-        category,
-        priority,
         userId: task.userId,
         status: task.status as "Pending" | "InProgress" | "Completed",
+        ...data,
       },
       {
         onSuccess: () => {
@@ -56,31 +56,31 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={() => { onClose(); reset(); }}>
       <DialogContent className="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-md">
         <DialogHeader>
           <DialogTitle className="text-blue-700 text-xl font-semibold mb-2">
             Editar Tarefa
           </DialogTitle>
         </DialogHeader>
-
-        <div className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <input
-            type="text"
+            {...register("title")}
             placeholder="Título"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
+            defaultValue={task.title}
           />
+          {errors.title && <p className="text-red-600">{errors.title.message}</p>}
 
           <textarea
+            {...register("description")}
             placeholder="Descrição"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
+            defaultValue={task.description}
           />
+          {errors.description && <p className="text-red-600">{errors.description.message}</p>}
 
-          <Select onValueChange={setCategory} defaultValue={category}>
+          <Select {...register("category")} defaultValue={task.category}>
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
               <SelectValue placeholder="Selecione uma categoria" />
             </SelectTrigger>
@@ -90,8 +90,9 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
               <SelectItem value="Study">Estudos</SelectItem>
             </SelectContent>
           </Select>
+          {errors.category && <p className="text-red-600">{errors.category.message}</p>}
 
-          <Select onValueChange={(value) => setPriority(value as "High" | "Medium" | "Low")} defaultValue={priority}>
+          <Select {...register("priority")} defaultValue={task.priority}>
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
               <SelectValue placeholder="Selecione a prioridade" />
             </SelectTrigger>
@@ -101,24 +102,17 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
               <SelectItem value="Low">Baixa</SelectItem>
             </SelectContent>
           </Select>
+          {errors.priority && <p className="text-red-600">{errors.priority.message}</p>}
 
           <div className="flex justify-end gap-3 mt-6">
-            <Button
-              variant="ghost"
-              className="text-gray-600 hover:bg-gray-100"
-              onClick={onClose}
-            >
+            <Button variant="ghost" onClick={onClose}>
               Cancelar
             </Button>
-            <Button
-              onClick={handleSubmit}
-              className="bg-blue-600 text-white hover:bg-blue-700"
-              disabled={updateTask.isPending}
-            >
-              {updateTask.isPending ? "Salvando..." : "Salvar"}
+            <Button type="submit" disabled={isSubmitting} className="bg-blue-600 text-white hover:bg-blue-700">
+              {isSubmitting ? "Salvando..." : "Salvar"}
             </Button>
           </div>
-        </div>
+        </form>
       </DialogContent>
     </Dialog>
   );
