@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 export default function Header() {
     const navigate = useNavigate();
   return (
-    <header className="top-0 left-0 w-full bg-white shadow z-50 px-6 py-4">
+    <header className="fixed top-0 left-0 w-full bg-white shadow px-6 py-4">
       <div className="flex items-center justify-between">
         <span className="text-xl font-bold text-blue-700">Tarefas</span>
 

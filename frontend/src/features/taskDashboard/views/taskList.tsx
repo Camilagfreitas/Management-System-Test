@@ -5,6 +5,9 @@ import TaskCard from "./taskCard";
 interface TaskListProps {
   userId: string | number;
   search?: string;
+  status?: string;
+  category?: string;
+  priority?: string;
   selectTask?: (task: Task) => void;
   setEditTaskModalOpen?: (open: boolean) => void;
 }
