@@ -3,15 +3,15 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+} from "@/ui/components/dialog";
+import { Button } from "@/ui/components/button";
 import {
   Select,
   SelectTrigger,
   SelectValue,
   SelectContent,
   SelectItem,
-} from "@/components/ui/select";
+} from "@/ui/components/select";
 
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -45,19 +45,19 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
 
   const createTask = useCreateTask();
 
-const onSubmit = (data: TaskFormData) => {
-  const taskWithRequiredFields = {
-    ...data,
-    status: "Pending" as "Pending",
-    userId: "1", //context api
+  const onSubmit = (data: TaskFormData) => {
+    const taskWithRequiredFields = {
+      ...data,
+      status: "Pending" as "Pending",
+      userId: "1", //context api
+    };
+    createTask.mutate(taskWithRequiredFields, {
+      onSuccess: () => {
+        reset();
+        onClose();
+      },
+    });
   };
-  createTask.mutate(taskWithRequiredFields, {
-    onSuccess: () => {
-      reset();
-      onClose();
-    },
-  });
-};
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -85,7 +85,9 @@ const onSubmit = (data: TaskFormData) => {
             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
           />
           {errors.description && (
-            <span className="text-sm text-red-500">{errors.description.message}</span>
+            <span className="text-sm text-red-500">
+              {errors.description.message}
+            </span>
           )}
 
           <Select onValueChange={(value) => setValue("category", value)}>
@@ -99,7 +101,9 @@ const onSubmit = (data: TaskFormData) => {
             </SelectContent>
           </Select>
           {errors.category && (
-            <span className="text-sm text-red-500">{errors.category.message}</span>
+            <span className="text-sm text-red-500">
+              {errors.category.message}
+            </span>
           )}
 
           <Select
@@ -117,7 +121,9 @@ const onSubmit = (data: TaskFormData) => {
             </SelectContent>
           </Select>
           {errors.priority && (
-            <span className="text-sm text-red-500">{errors.priority.message}</span>
+            <span className="text-sm text-red-500">
+              {errors.priority.message}
+            </span>
           )}
 
           <div className="flex justify-end gap-3 mt-6">
@@ -129,7 +135,10 @@ const onSubmit = (data: TaskFormData) => {
             >
               Cancelar
             </Button>
-            <Button type="submit" className="bg-blue-600 text-white hover:bg-blue-700">
+            <Button
+              type="submit"
+              className="bg-blue-600 text-white hover:bg-blue-700"
+            >
               Adicionar
             </Button>
           </div>

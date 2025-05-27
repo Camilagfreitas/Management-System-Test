@@ -1,22 +1,28 @@
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 import type { Task } from "@/features/taskDashboard/types/task";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
 
 interface ChartByCategoryProps {
   tasks: Task[];
 }
 
-const COLORS = [
-  "#4FC3F7",
-  "#81C784", 
-  "#FFD54F",
-];
+const COLORS = ["#4FC3F7", "#81C784", "#FFD54F"];
 
 export default function ChartByCategory({ tasks }: ChartByCategoryProps) {
-  const categoryCount = tasks.reduce((acc: Record<string, number>, task) => {
-    acc[task.category] = (acc[task.category] || 0) + 1;
-    return acc;
-  }, {Personal: 0, Work: 0, Study: 0});
+  const categoryCount = tasks.reduce(
+    (acc: Record<string, number>, task) => {
+      acc[task.category] = (acc[task.category] || 0) + 1;
+      return acc;
+    },
+    { Personal: 0, Work: 0, Study: 0 }
+  );
 
   const data = [
     { name: "Pessoal", value: categoryCount.Personal },
@@ -40,7 +46,10 @@ export default function ChartByCategory({ tasks }: ChartByCategoryProps) {
               label
             >
               {data.map((_entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
               ))}
             </Pie>
             <Tooltip />

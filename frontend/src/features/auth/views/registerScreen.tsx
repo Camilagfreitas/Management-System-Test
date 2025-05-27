@@ -2,12 +2,12 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/ui/components/button";
+import { Input } from "@/ui/components/input";
+import { Label } from "@/ui/components/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
 import { useCreateUser } from "../hooks/useAuth";
-import { toast } from "sonner"
+import { toast } from "sonner";
 
 const registerSchema = z.object({
   name: z.string().nonempty("O nome é obrigatório"),
@@ -33,8 +33,8 @@ export default function RegisterScreen() {
   const onSubmit = (data: any) => {
     mutate(data, {
       onSuccess: () => {
-        navigate("/")
-          toast.success("Usuário cadastrado com sucesso!");
+        navigate("/");
+        toast.success("Usuário cadastrado com sucesso!");
       },
     });
   };
@@ -51,7 +51,9 @@ export default function RegisterScreen() {
         <CardContent>
           <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <Label htmlFor="name" className="text-gray-500">Nome</Label>
+              <Label htmlFor="name" className="text-gray-500">
+                Nome
+              </Label>
               <Input
                 id="name"
                 type="text"
@@ -59,11 +61,17 @@ export default function RegisterScreen() {
                 className="border-blue-200"
                 {...register("name")}
               />
-              {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}
+              {errors.name && (
+                <p className="text-sm text-red-500 mt-1">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
 
             <div>
-              <Label htmlFor="email" className="text-gray-500">Email</Label>
+              <Label htmlFor="email" className="text-gray-500">
+                Email
+              </Label>
               <Input
                 id="email"
                 type="email"
@@ -71,11 +79,17 @@ export default function RegisterScreen() {
                 className="border-blue-200"
                 {...register("email")}
               />
-              {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-sm text-red-500 mt-1">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
             <div>
-              <Label htmlFor="password" className="text-gray-500">Senha</Label>
+              <Label htmlFor="password" className="text-gray-500">
+                Senha
+              </Label>
               <Input
                 id="password"
                 type="password"
@@ -83,10 +97,17 @@ export default function RegisterScreen() {
                 className="border-blue-200"
                 {...register("password")}
               />
-              {errors.password && <p className="text-sm text-red-500 mt-1">{errors.password.message}</p>}
+              {errors.password && (
+                <p className="text-sm text-red-500 mt-1">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
 
-            <Button type="submit" className="w-full bg-blue-600 text-white hover:bg-blue-700">
+            <Button
+              type="submit"
+              className="w-full bg-blue-600 text-white hover:bg-blue-700"
+            >
               Cadastrar
             </Button>
 

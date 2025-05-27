@@ -4,13 +4,13 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+} from "@/ui/components/sheet";
+import { Button } from "@/ui/components/button";
 import { Menu, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow px-6 py-4">
       <div className="flex items-center justify-between">
@@ -23,7 +23,11 @@ export default function Header() {
           <Button variant="ghost" onClick={() => navigate("../analises")}>
             Dashboard Analítico
           </Button>
-          <Button variant="ghost" onClick={()=> console.log('sair')} className="text-gray-500">
+          <Button
+            variant="ghost"
+            onClick={() => console.log("sair")}
+            className="text-gray-500"
+          >
             Sair
           </Button>
         </nav>
@@ -46,12 +50,12 @@ export default function Header() {
                 Dashboard Analítico
               </Button>
               <Button
-              variant="ghost"
-              onClick={() => console.log("sair")}
-              className="absolute bottom-4 right-4 text-gray-500"
-            >
-              Sair
-            </Button>
+                variant="ghost"
+                onClick={() => console.log("sair")}
+                className="absolute bottom-4 right-4 text-gray-500"
+              >
+                Sair
+              </Button>
             </div>
           </SheetContent>
         </Sheet>

@@ -1,16 +1,19 @@
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 import type { Task } from "@/features/taskDashboard/types/task";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
 
 interface ChartByStatusProps {
   tasks: Task[];
 }
 
-const COLORS = [
-  "#4ade80", 
-  "#facc15", 
-  "#f87171", 
-];
+const COLORS = ["#4ade80", "#facc15", "#f87171"];
 
 export default function ChartByStatus({ tasks }: ChartByStatusProps) {
   const statusCount = tasks.reduce(
@@ -45,7 +48,10 @@ export default function ChartByStatus({ tasks }: ChartByStatusProps) {
               label
             >
               {data.map((_entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
               ))}
             </Pie>
             <Tooltip />

@@ -1,11 +1,22 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/ui/components/button";
 import type { Task } from "../types/task";
 import { useUpdateTask } from "../hooks/useTask";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/ui/components/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/ui/components/select";
 
 const taskSchema = z.object({
   title: z.string().min(1, "Título é obrigatório"),
@@ -22,13 +33,17 @@ interface EditTaskModalProps {
   task: Task;
 }
 
-export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalProps) {
+export default function EditTaskModal({
+  isOpen,
+  onClose,
+  task,
+}: EditTaskModalProps) {
   const updateTask = useUpdateTask();
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset
+    reset,
   } = useForm<TaskForm>({
     resolver: zodResolver(taskSchema),
     defaultValues: {
@@ -56,7 +71,13 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={() => { onClose(); reset(); }}>
+    <Dialog
+      open={isOpen}
+      onOpenChange={() => {
+        onClose();
+        reset();
+      }}
+    >
       <DialogContent className="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-md">
         <DialogHeader>
           <DialogTitle className="text-blue-700 text-xl font-semibold mb-2">
@@ -70,7 +91,9 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
             defaultValue={task.title}
           />
-          {errors.title && <p className="text-red-600">{errors.title.message}</p>}
+          {errors.title && (
+            <p className="text-red-600">{errors.title.message}</p>
+          )}
 
           <textarea
             {...register("description")}
@@ -78,7 +101,9 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
             className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
             defaultValue={task.description}
           />
-          {errors.description && <p className="text-red-600">{errors.description.message}</p>}
+          {errors.description && (
+            <p className="text-red-600">{errors.description.message}</p>
+          )}
 
           <Select {...register("category")} defaultValue={task.category}>
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
@@ -90,7 +115,9 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
               <SelectItem value="Study">Estudos</SelectItem>
             </SelectContent>
           </Select>
-          {errors.category && <p className="text-red-600">{errors.category.message}</p>}
+          {errors.category && (
+            <p className="text-red-600">{errors.category.message}</p>
+          )}
 
           <Select {...register("priority")} defaultValue={task.priority}>
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
@@ -102,13 +129,19 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
               <SelectItem value="Low">Baixa</SelectItem>
             </SelectContent>
           </Select>
-          {errors.priority && <p className="text-red-600">{errors.priority.message}</p>}
+          {errors.priority && (
+            <p className="text-red-600">{errors.priority.message}</p>
+          )}
 
           <div className="flex justify-end gap-3 mt-6">
             <Button variant="ghost" onClick={onClose}>
               Cancelar
             </Button>
-            <Button type="submit" disabled={isSubmitting} className="bg-blue-600 text-white hover:bg-blue-700">
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-blue-600 text-white hover:bg-blue-700"
+            >
               {isSubmitting ? "Salvando..." : "Salvar"}
             </Button>
           </div>

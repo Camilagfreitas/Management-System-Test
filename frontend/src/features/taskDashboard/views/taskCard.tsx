@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/ui/components/button";
 import type { Task } from "../types/task";
 import { Pencil, Trash2 } from "lucide-react";
 import { useDeleteTask, useUpdateTask } from "../hooks/useTask";
@@ -8,8 +8,11 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { priorityColors, translateCategoryAndPriority } from "../utils/taskUtils";
+} from "@/ui/components/select";
+import {
+  priorityColors,
+  translateCategoryAndPriority,
+} from "../utils/taskUtils";
 
 interface TaskCardProps {
   task: Task;
@@ -53,14 +56,20 @@ export default function TaskCard({
         </Button>
       </div>
 
-      <h2 className="text-xl font-semibold text-blue-600 mb-2 truncate">{task.title}</h2>
+      <h2 className="text-xl font-semibold text-blue-600 mb-2 truncate">
+        {task.title}
+      </h2>
       <p className="text-gray-700 mb-4">{task.description}</p>
 
       <div className="flex flex-wrap gap-3 text-sm items-center">
         <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">
-          Categoria: {translateCategoryAndPriority( task.category)}
+          Categoria: {translateCategoryAndPriority(task.category)}
         </span>
-        <span className={`inline-block px-3 py-1 rounded-full font-medium ${priorityColors[task.priority]}`}>
+        <span
+          className={`inline-block px-3 py-1 rounded-full font-medium ${
+            priorityColors[task.priority]
+          }`}
+        >
           Prioridade: {translateCategoryAndPriority(task.priority)}
         </span>
 
