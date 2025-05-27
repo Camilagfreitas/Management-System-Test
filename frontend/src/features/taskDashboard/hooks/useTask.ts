@@ -2,16 +2,16 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import api from "@/lib/api";
 import API_ROUTES from "@/services/apiRoutes";
 import type { Task } from "../types/task";
-import { deleteTask, updateTask } from "../services/taskService";
+import { deleteTask, getUserTasks, updateTask } from "../services/taskService";
 import { toast } from "sonner";
+
 
 
 export function useUserTasks(userId: string | number) {
   return useQuery<Task[]>({
     queryKey: ["userTasks", userId],
     queryFn: async () => {
-      const response = await api.get(`${API_ROUTES.USERS}/${userId}/tasks`);
-      return response.data;
+      return await getUserTasks(userId)
     },
     enabled: !!userId,
   });

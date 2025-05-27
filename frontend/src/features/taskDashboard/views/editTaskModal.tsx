@@ -15,7 +15,7 @@ interface Task {
   title: string;
   description: string;
   category: string;
-  priority: "Alta" | "Média" | "Baixa";
+  priority: "High" | "Medium" | "Low";
   userId: string;
   status: string;
 }
@@ -30,7 +30,7 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
   const [title, setTitle] = useState(task.title);
   const [description, setDescription] = useState(task.description);
   const [category, setCategory] = useState(task.category);
-  const [priority, setPriority] = useState<"Alta" | "Média" | "Baixa">(task.priority);
+  const [priority, setPriority] = useState<"High" | "Medium" | "Low">(task.priority);
 
   const updateTask = useUpdateTask();
 
@@ -85,20 +85,20 @@ export default function EditTaskModal({ isOpen, onClose, task }: EditTaskModalPr
               <SelectValue placeholder="Selecione uma categoria" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Trabalho">Trabalho</SelectItem>
-              <SelectItem value="Pessoal">Pessoal</SelectItem>
-              <SelectItem value="Estudos">Estudos</SelectItem>
+              <SelectItem value="Work">Trabalho</SelectItem>
+              <SelectItem value="Personal">Pessoal</SelectItem>
+              <SelectItem value="Study">Estudos</SelectItem>
             </SelectContent>
           </Select>
 
-          <Select onValueChange={(value) => setPriority(value as "Alta" | "Média" | "Baixa")} defaultValue={priority}>
+          <Select onValueChange={(value) => setPriority(value as "High" | "Medium" | "Low")} defaultValue={priority}>
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
               <SelectValue placeholder="Selecione a prioridade" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Alta">Alta</SelectItem>
-              <SelectItem value="Média">Média</SelectItem>
-              <SelectItem value="Baixa">Baixa</SelectItem>
+              <SelectItem value="High">Alta</SelectItem>
+              <SelectItem value="Medium">Média</SelectItem>
+              <SelectItem value="Low">Baixa</SelectItem>
             </SelectContent>
           </Select>
 

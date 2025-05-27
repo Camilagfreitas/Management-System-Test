@@ -4,6 +4,6 @@ export type Task = {
   title: string;
   description: string;
   category: string;
-  priority: "Alta" | "Média" | "Baixa";
+  priority: "High" | "Medium" | "Low";
   status: "Pending" | "InProgress" | "Completed";
 };

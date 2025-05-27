@@ -3,7 +3,7 @@ import API_ROUTES from "@/services/apiRoutes";
 import type { Task } from "../types/task";
 
 
-export const getUserTasks = async (userId: string) => {
+export const getUserTasks = async (userId: string|number) => {
   const response = await api.get(`${API_ROUTES.USERS}/${userId}/tasks`);
   return response.data;
 };

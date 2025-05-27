@@ -27,7 +27,7 @@ const taskSchema = z.object({
   title: z.string().min(1, "Título obrigatório"),
   description: z.string().min(1, "Descrição obrigatória"),
   category: z.string().min(1, "Categoria obrigatória"),
-  priority: z.enum(["Alta", "Média", "Baixa"]),
+  priority: z.enum(["High", "Medium", "Low"]),
 });
 
 type TaskFormData = z.infer<typeof taskSchema>;
@@ -93,9 +93,9 @@ const onSubmit = (data: TaskFormData) => {
               <SelectValue placeholder="Selecione uma categoria" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Trabalho">Trabalho</SelectItem>
-              <SelectItem value="Pessoal">Pessoal</SelectItem>
-              <SelectItem value="Estudos">Estudos</SelectItem>
+              <SelectItem value="Work">Trabalho</SelectItem>
+              <SelectItem value="Personal">Pessoal</SelectItem>
+              <SelectItem value="Study">Estudos</SelectItem>
             </SelectContent>
           </Select>
           {errors.category && (
@@ -104,16 +104,16 @@ const onSubmit = (data: TaskFormData) => {
 
           <Select
             onValueChange={(value) =>
-              setValue("priority", value as "Alta" | "Média" | "Baixa")
+              setValue("priority", value as "High" | "Medium" | "Low")
             }
           >
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
               <SelectValue placeholder="Selecione a prioridade" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Alta">Alta</SelectItem>
-              <SelectItem value="Média">Média</SelectItem>
-              <SelectItem value="Baixa">Baixa</SelectItem>
+              <SelectItem value="High">Alta</SelectItem>
+              <SelectItem value="Medium">Média</SelectItem>
+              <SelectItem value="Low">Baixa</SelectItem>
             </SelectContent>
           </Select>
           {errors.priority && (

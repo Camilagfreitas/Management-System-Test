@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { priorityColors, translateCategory, translatePriority } from "../utils/taskUtils";
 
 interface TaskCardProps {
   task: Task;
@@ -57,10 +58,10 @@ export default function TaskCard({
 
       <div className="flex flex-wrap gap-3 text-sm items-center">
         <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">
-          Categoria: {task.category}
+          Categoria: {translateCategory( task.category)}
         </span>
-        <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">
-          Prioridade: {task.priority}
+        <span className={`inline-block px-3 py-1 rounded-full font-medium ${priorityColors[task.priority]}`}>
+          Prioridade: {translatePriority(task.priority)}
         </span>
 
         <Select value={task.status} onValueChange={handleStatusChange}>
