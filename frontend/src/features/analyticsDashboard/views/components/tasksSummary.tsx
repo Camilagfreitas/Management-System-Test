@@ -1,7 +1,7 @@
 import type { Task } from "@/features/taskDashboard/types/task";
 import { Card, CardTitle, CardContent } from "@/components/ui/card";
 
-import { useGetTaskSummary } from "../hooks/useAnalytics";
+import { useGetTaskSummary } from "../../hooks/useAnalytics";
 import { Badge } from "@/components/ui/badge";
 
 interface TaskSummaryProps {
