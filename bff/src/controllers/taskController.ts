@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import taskService from '../services/taskService'
+import taskService from '../services/TaskService'
 
 export default {
   async getUserTasks(req: Request, res: Response) {

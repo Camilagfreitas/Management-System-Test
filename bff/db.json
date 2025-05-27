@@ -61,25 +61,16 @@
       "userId": "a752",
       "title": "Comprar pão",
       "description": "Ir ao mercado",
-      "category": "Pessoal",
-      "priority": "Média",
+      "category": "Personal",
+      "priority": "Medium",
       "status": "Completed"
-    },
-    {
-      "id": "2414",
-      "title": "Estudar React Native",
-      "description": "estudar react",
-      "category": "Trabalho",
-      "priority": "Alta",
-      "status": "Pending",
-      "userId": "1"
     },
     {
       "id": "09f5",
       "title": "Comprar ração",
       "description": "Comprar ração para o gato",
-      "category": "Pessoal",
-      "priority": "Média",
+      "category": "Personal",
+      "priority": "Medium",
       "status": "Completed",
       "userId": "1"
     },
@@ -87,8 +78,8 @@
       "id": "27b5",
       "title": "Estudar Angular",
       "description": "Estudar angular",
-      "category": "Trabalho",
-      "priority": "Média",
+      "category": "Work",
+      "priority": "Medium",
       "status": "Pending",
       "userId": "1"
     },
@@ -96,8 +87,8 @@
       "id": "477d",
       "title": "Comprar água",
       "description": "Comprar água",
-      "category": "Pessoal",
-      "priority": "Alta",
+      "category": "Personal",
+      "priority": "High",
       "status": "Completed",
       "userId": "1"
     }
