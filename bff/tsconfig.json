@@ -12,6 +12,6 @@
       "./src/types"
     ],
   },
-  "include": ["src"],
+  "include": ["src", "src/swagger.ts"],
   "exclude": ["node_modules"]
 }

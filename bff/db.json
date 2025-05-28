@@ -4,55 +4,61 @@
       "id": "1",
       "name": "Administrador",
       "email": "admin@example.com",
-      "password": "123456"
+      "password": "$2b$12$.KdD.UBMlafkV4QGuGSejetLM.SOracHtuxBCsXTBEMthoVp.1bCS"
     },
     {
       "id": "a752",
       "name": "Camila",
       "email": "camila@example.com",
-      "password": "123456"
+      "password": "$2b$12$wRP84hIrLz6SQGPmcpMRLew0qMNpukHOz3Py3QpNYsa9MG6P8Wf42"
     },
     {
       "id": "24cc",
       "name": "Carla",
       "email": "carla@email.com",
-      "password": "123456"
+      "password": "$2b$12$pEfIjfkp8QBM/ez.wopDAu7jja45H48CPB7J8a0VbL6MpcWKOelLy"
     },
     {
       "id": "6d8f",
       "name": "Antonio",
       "email": "antonio@email.com",
-      "password": "123456"
+      "password": "$2b$12$.aSOaQcgnnGZ47FCHhgUruN780xf1COdLHvt8BNYXRHVAcfbdWPhi"
     },
     {
       "id": "d322",
       "name": "teste",
       "email": "teste@mail.com",
-      "password": "123456"
+      "password": "$2b$12$7o2VWpeemihimWRfxLz6I.PGaOzUAZUm4R7keUTYcjMC3hko9u8XG"
     },
     {
       "id": "877d",
       "name": "João",
       "email": "joao@email.com",
-      "password": "1234567"
+      "password": "$2b$12$GVCzI1S0llg47EBxZ40DzOvosVaj9eKo.c090rucmTz7owSYoMIq."
     },
     {
       "id": "d45c",
       "name": "A",
       "email": "c_f@e.com",
-      "password": "minhasenha123"
+      "password": "$2b$12$BQZgY1i89Oh1Kndp7glsiOy3rCBMEYKnM8fr73KXYhN/2e/WROuqe"
     },
     {
       "id": "2ed7",
       "name": "Aa",
       "email": "a@a.com",
-      "password": "1234567"
+      "password": "$2b$12$lt.Owk9qP/3C3MBklwz5..eY5keeynbbpSOfZQShT7FskbsEbO5fq"
     },
     {
       "id": "5090",
       "name": "Agnes",
       "email": "agnes@email.com",
-      "password": "minhasenha123"
+      "password": "$2b$12$R.l6EHFzM35b2NY37ntVqO.C91a17Wm.m7UqYiQDAyDtyxsbj80Li"
+    },
+    {
+      "id": "66479afe-0fcc-4afd-97f0-2a373b44ddd9",
+      "name": "Test new",
+      "email": "Testnew@email.com",
+      "password": "$2b$10$75jJmk1V.vYCmHIIdijOQel/xKhpD5NA2yP0xxkT6DBMQZVvCYTIK"
     }
   ],
   "tasks": [
@@ -63,7 +69,7 @@
       "description": "Ir ao mercado",
       "category": "Personal",
       "priority": "Medium",
-      "status": "Pending"
+      "status": "Completed"
     },
     {
       "id": "09f5",
@@ -80,7 +86,7 @@
       "description": "Estudar angular",
       "category": "Work",
       "priority": "Medium",
-      "status": "InProgress",
+      "status": "Pending",
       "userId": "1"
     },
     {
@@ -91,6 +97,33 @@
       "priority": "High",
       "status": "Completed",
       "userId": "1"
+    },
+    {
+      "id": "3781bcc2-550c-448d-8084-bcca9f96357c",
+      "userId": "66479afe-0fcc-4afd-97f0-2a373b44ddd9",
+      "title": "Test",
+      "description": "Testt",
+      "category": "other test",
+      "priority": "high",
+      "status": "completed"
+    },
+    {
+      "id": "b7e03bb9-310f-4c80-aeb7-a67d211ad796",
+      "userId": "66479afe-0fcc-4afd-97f0-2a373b44ddd9",
+      "title": "Test",
+      "description": "Testt",
+      "category": "other test",
+      "priority": "high",
+      "status": "completed"
+    },
+    {
+      "id": "d4210722-e912-46ec-a4d0-6e8c904a389c",
+      "userId": "66479afe-0fcc-4afd-97f0-2a373b44ddd9",
+      "title": "Testw",
+      "description": "Testt",
+      "category": "other test",
+      "priority": "high",
+      "status": "completed"
     }
   ]
 }
