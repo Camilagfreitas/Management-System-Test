@@ -6,13 +6,13 @@ import {
   SheetTrigger,
 } from "@/ui/components/sheet";
 import { Button } from "@/ui/components/button";
-import { Menu, LogOut } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow px-6 py-4">
+    <header className="fixed top-0 left-0 w-full bg-white shadow px-6 py-4 z-2">
       <div className="flex items-center justify-between">
         <span className="text-xl font-bold text-blue-700">Tarefas</span>
 
@@ -52,7 +52,7 @@ export default function Header() {
               <Button
                 variant="ghost"
                 onClick={() => console.log("sair")}
-                className="absolute bottom-4 right-4 text-gray-500"
+                className="bottom-4 right-4 text-gray-500"
               >
                 Sair
               </Button>
