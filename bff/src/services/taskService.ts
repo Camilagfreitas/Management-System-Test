@@ -20,6 +20,7 @@ export default {
   ): Promise<Task | null> {
     return await taskRepository.update(taskId, updates);
   },
+  
   async getFilteredTasks(filters: any) {
     return await taskRepository.getWithFilters(filters);
   },

@@ -63,7 +63,7 @@
       "description": "Ir ao mercado",
       "category": "Personal",
       "priority": "Medium",
-      "status": "Completed"
+      "status": "Pending"
     },
     {
       "id": "09f5",
@@ -80,7 +80,7 @@
       "description": "Estudar angular",
       "category": "Work",
       "priority": "Medium",
-      "status": "Pending",
+      "status": "InProgress",
       "userId": "1"
     },
     {
