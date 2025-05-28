@@ -1,11 +1,11 @@
 import Header from "@/shared/components/header";
 import TaskSummary from "./components/tasksSummary";
-import { useUserTasks } from "@/features/taskDashboard/hooks/useTask";
+import { useGetUserTasks } from "@/features/taskDashboard/hooks/useTask";
 import ChartByStatus from "./components/chartByStatus";
 import ChartByCategory from "./components/chartByCategory";
 
 export default function AnalyticsScreen() {
-  const { data: tasks, isLoading } = useUserTasks("1");
+  const { data: tasks } = useGetUserTasks("1");
 
   return (
     <>

@@ -2,8 +2,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/ui/components/button";
-import type { Task } from "../types/task";
-import { useUpdateTask } from "../hooks/useTask";
 import {
   Dialog,
   DialogContent,
@@ -17,6 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/ui/components/select";
+import type { Task } from "../../types/task";
+import { useUpdateTask } from "../../hooks/useTask";
 
 const taskSchema = z.object({
   title: z.string().min(1, "Título é obrigatório"),

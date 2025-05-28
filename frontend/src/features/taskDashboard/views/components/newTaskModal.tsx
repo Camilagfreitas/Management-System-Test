@@ -16,7 +16,7 @@ import {
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useCreateTask } from "../hooks/useTask";
+import { useCreateTask } from "../../hooks/useTask";
 
 interface NewTaskModalProps {
   isOpen: boolean;
@@ -48,7 +48,7 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
   const onSubmit = (data: TaskFormData) => {
     const taskWithRequiredFields = {
       ...data,
-      status: "Pending" as "Pending",
+      status: "Pending" as const,
       userId: "1", //context api
     };
     createTask.mutate(taskWithRequiredFields, {

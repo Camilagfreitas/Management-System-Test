@@ -24,7 +24,6 @@ type FilterGroup = {
 type FilterOption = {
   group: string;
   value: string;
-  label: string;
 };
 
 type Props = {
@@ -45,7 +44,7 @@ export function ComboboxPopover({ groups, selected, onChange }: Props) {
             className="w-[200px] justify-start border border-gray-300 rounded-lg text-gray-700 bg-white text-gray-500"
           >
             {selected ? (
-              `Filtro: ${translateCategoryAndPriority(selected.label)}`
+              `Filtro: ${translateCategoryAndPriority(selected.value)}`
             ) : (
               <> Filtrar</>
             )}

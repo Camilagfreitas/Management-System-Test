@@ -1,13 +1,13 @@
-import TaskList from "./taskList";
 import { useState } from "react";
 import { Button } from "@/ui/components/button";
-import NewTaskModal from "./newTaskModal";
 import { Input } from "@/ui/components/input";
-import EditTaskModal from "./editTaskModal";
 import type { Task } from "../types/task";
-import Header from "@/shared/components/header";
 import { ComboboxPopover } from "@/ui/components/combobox";
 import { filterGroups } from "../utils/taskUtils";
+import EditTaskModal from "./components/editTaskModal";
+import NewTaskModal from "./components/newTaskModal";
+import TaskList from "./components/taskList";
+import { useFilteredTasks } from "../hooks/useTask";
 
 export default function TaskScreen() {
   const [isNewTaskModalOpen, setIsNewTaskModalOpen] = useState(false);
@@ -16,14 +16,13 @@ export default function TaskScreen() {
   const [filter, setFilter] = useState<{
     group: string;
     value: string;
-    label: string;
-  } | null>(null);
+  }>({ group: "", value: "" });
 
   const [search, setSearch] = useState("");
+  const { data: tasks } = useFilteredTasks("1", filter);
 
   return (
     <>
-      <Header />
       <div className="bg-gray-100 min-h-screen p-6 pt-22">
         <h1 className="text-3xl font-extrabold mb-4 text-blue-700">
           Lista de Tarefas
@@ -48,12 +47,12 @@ export default function TaskScreen() {
           <ComboboxPopover
             groups={filterGroups}
             selected={filter}
-            onChange={setFilter}
+            onChange={(option) => setFilter(option ?? { group: "", value: "" })}
           />
         </div>
 
         <TaskList
-          userId={1}
+          tasks={tasks}
           search={search}
           selectTask={(task) => setSelectedTask(task)}
           setEditTaskModalOpen={setIsEditTaskModalOpen}

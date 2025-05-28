@@ -1,15 +1,13 @@
-
 export const translateCategoryAndPriority = (value: string) => {
   const map: Record<string, string> = {
-    "Category": "Categoria",
-    "Work": "Trabalho",
-    "Study": "Estudos",
-    "Personal": "Pessoal",
-    "Priority": "Prioridade",
-    "High": "Alta",
-    "Medium": "Média",
-    "Low": "Baixa",
-
+    Category: "Categoria",
+    Work: "Trabalho",
+    Study: "Estudos",
+    Personal: "Pessoal",
+    Priority: "Prioridade",
+    High: "Alta",
+    Medium: "Média",
+    Low: "Baixa",
   };
   return map[value] || value;
 };
@@ -24,17 +22,17 @@ export const filterGroups = [
   {
     group: "Category",
     options: [
-      { value: "work", label: "Work" },
-      { value: "personal", label: "Personal" },
-      { value: "study", label: "Study" },
+      { value: "Work", label: "Work" },
+      { value: "Personal", label: "Personal" },
+      { value: "Study", label: "Study" },
     ],
   },
   {
     group: "Priority",
     options: [
-      { value: "high", label: "High" },
-      { value: "medium", label: "Medium" },
-      { value: "low", label: "Low" },
+      { value: "High", label: "High" },
+      { value: "Medium", label: "Medium" },
+      { value: "Low", label: "Low" },
     ],
   },
-]
+];

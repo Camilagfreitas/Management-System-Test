@@ -1,34 +1,19 @@
-import { useUserTasks } from "../hooks/useTask";
-import type { Task } from "../types/task";
+import type { Task } from "../../types/task";
 import TaskCard from "./taskCard";
 
 interface TaskListProps {
-  userId: string | number;
   search?: string;
-  status?: string;
-  category?: string;
-  priority?: string;
   selectTask?: (task: Task) => void;
   setEditTaskModalOpen?: (open: boolean) => void;
+  tasks?: Task[];
 }
 
 export default function TaskList({
-  userId,
   search,
   selectTask,
   setEditTaskModalOpen,
+  tasks,
 }: TaskListProps) {
-  const { data: tasks, isLoading, error } = useUserTasks(userId);
-
-  if (isLoading)
-    return <p className="text-center mt-10">Carregando tarefas...</p>;
-  if (error)
-    return (
-      <p className="text-center mt-10 text-red-500">
-        Erro ao carregar tarefas.
-      </p>
-    );
-
   const filteredTasks = tasks?.filter((task) =>
     task.title.toLowerCase().includes((search ?? "").toLowerCase())
   );
@@ -53,7 +38,10 @@ export default function TaskList({
             {statusLabels[status as keyof typeof groupedTasks]}
           </h2>
           {taskList.length === 0 ? (
-            <p className="text-gray-500">Nenhuma tarefa {statusLabels[status as keyof typeof groupedTasks].toLowerCase()}.</p>
+            <p className="text-gray-500">
+              Nenhuma tarefa{" "}
+              {statusLabels[status as keyof typeof groupedTasks].toLowerCase()}.
+            </p>
           ) : (
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {taskList.map((task: Task) => (
