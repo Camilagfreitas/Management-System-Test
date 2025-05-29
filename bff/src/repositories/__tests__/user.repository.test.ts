@@ -18,7 +18,7 @@ describe('UserRepository', () => {
   });
 
   describe('getUserById', () => {
-    it('should return user when axios resolves with data', async () => {
+    test('should return user when axios resolves with data', async () => {
       const fakeUser = { id: '123', name: 'John Doe', email: 'john@example.com', password: 'hash' };
       mockedAxios.get = vi.fn().mockResolvedValue({ data: [fakeUser] });
 
@@ -30,7 +30,7 @@ describe('UserRepository', () => {
       expect(user).toEqual(fakeUser);
     });
 
-    it('should return null when axios resolves with empty array', async () => {
+    test('should return null when axios resolves with empty array', async () => {
       mockedAxios.get = vi.fn().mockResolvedValue({ data: [] });
 
       const user = await repo.getUserById('123');
@@ -38,7 +38,7 @@ describe('UserRepository', () => {
       expect(user).toBeNull();
     });
 
-    it('should return null when axios throws', async () => {
+    test('should return null when axios throws', async () => {
       mockedAxios.get = vi.fn().mockRejectedValue(new Error('fail'));
 
       const user = await repo.getUserById('123');
@@ -48,7 +48,7 @@ describe('UserRepository', () => {
   });
 
   describe('getUserByEmail', () => {
-    it('should return user when axios resolves with data', async () => {
+    test('should return user when axios resolves with data', async () => {
       const fakeUser = { id: '123', name: 'John Doe', email: 'john@example.com', password: 'hash' };
       mockedAxios.get = vi.fn().mockResolvedValue({ data: [fakeUser] });
 
@@ -60,7 +60,7 @@ describe('UserRepository', () => {
       expect(user).toEqual(fakeUser);
     });
 
-    it('should return null when axios resolves with empty array', async () => {
+    test('should return null when axios resolves with empty array', async () => {
       mockedAxios.get = vi.fn().mockResolvedValue({ data: [] });
 
       const user = await repo.getUserByEmail('john@example.com');
@@ -68,7 +68,7 @@ describe('UserRepository', () => {
       expect(user).toBeNull();
     });
 
-    it('should return null when axios throws', async () => {
+    test('should return null when axios throws', async () => {
       mockedAxios.get = vi.fn().mockRejectedValue(new Error('fail'));
 
       const user = await repo.getUserByEmail('john@example.com');
@@ -78,7 +78,7 @@ describe('UserRepository', () => {
   });
 
   describe('create', () => {
-    it('should call axios.post and return created user', async () => {
+    test('should call axios.post and return created user', async () => {
       const userData = { name: 'John Doe', email: 'john@example.com', password: 'pass123' };
       const createdUser = { id: 'uuid-1234', ...userData };
 

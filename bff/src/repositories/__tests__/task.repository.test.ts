@@ -21,7 +21,7 @@ describe('TaskRepository', () => {
   });
 
   describe('getByUserIdWithFilters', () => {
-    it('should call axios.get with correct URL and return tasks', async () => {
+    test('should call axios.get with correct URL and return tasks', async () => {
       const userId = 'user123';
       const filters = { status: 'pending', priority: 'high' };
       const fakeTasks = [{ id: '1', title: 'task 1' }];
@@ -40,7 +40,7 @@ describe('TaskRepository', () => {
   });
 
   describe('create', () => {
-    it('should call axios.post with task data including generated id', async () => {
+    test('should call axios.post with task data including generated id', async () => {
       const newTask = {
         title: 'New Task',
         userId: 'user123',
@@ -67,7 +67,7 @@ describe('TaskRepository', () => {
   });
 
   describe('delete', () => {
-    it('should return true if delete succeeds', async () => {
+    test('should return true if delete succeeds', async () => {
       mockedAxios.delete = vi.fn().mockResolvedValue({ status: 200 });
 
       const result = await repo.delete('task-id');
@@ -78,7 +78,7 @@ describe('TaskRepository', () => {
       expect(result).toBe(true);
     });
 
-    it('should return false if delete throws', async () => {
+    test('should return false if delete throws', async () => {
       mockedAxios.delete = vi.fn().mockRejectedValue(new Error('fail'));
 
       const result = await repo.delete('task-id');
@@ -88,7 +88,7 @@ describe('TaskRepository', () => {
   });
 
   describe('update', () => {
-    it('should return updated task on success', async () => {
+    test('should return updated task on success', async () => {
       const updates = { title: 'Updated' };
       const updatedTask = { id: 'task1', title: 'Updated' };
 
@@ -103,7 +103,7 @@ describe('TaskRepository', () => {
       expect(result).toEqual(updatedTask);
     });
 
-    it('should return null on failure', async () => {
+    test('should return null on failure', async () => {
       mockedAxios.patch = vi.fn().mockRejectedValue(new Error('fail'));
 
       const result = await repo.update('task1', { title: 'Updated' });
@@ -113,7 +113,7 @@ describe('TaskRepository', () => {
   });
 
   describe('getById', () => {
-    it('should return task on success', async () => {
+    test('should return task on success', async () => {
       const task = { id: 'task1', title: 'Task 1' };
 
       mockedAxios.get = vi.fn().mockResolvedValue({ data: task });
@@ -126,7 +126,7 @@ describe('TaskRepository', () => {
       expect(result).toEqual(task);
     });
 
-    it('should return null if request fails', async () => {
+    test('should return null if request fails', async () => {
       mockedAxios.get = vi.fn().mockRejectedValue(new Error('fail'));
 
       const result = await repo.getById('task1');

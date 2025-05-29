@@ -23,7 +23,7 @@ describe('TaskService', () => {
   });
 
   describe('getTasksByUserIdWithFilters', () => {
-    it('should return tasks when found', async () => {
+    test('should return tasks when found', async () => {
       const fakeTasks = [{ id: '1', title: 'Task 1', userId: 'user1' }];
       (taskRepoMock.getByUserIdWithFilters as any).mockResolvedValue(fakeTasks);
 
@@ -32,7 +32,7 @@ describe('TaskService', () => {
       expect(taskRepoMock.getByUserIdWithFilters).toHaveBeenCalledWith('user1', { status: 'open' });
     });
 
-    it('should return empty array if no tasks found', async () => {
+    test('should return empty array if no tasks found', async () => {
       (taskRepoMock.getByUserIdWithFilters as any).mockResolvedValue([]);
 
       const tasks = await service.getTasksByUserIdWithFilters('user1', { status: 'open' });
@@ -41,7 +41,7 @@ describe('TaskService', () => {
   });
 
   describe('createTaskForUser', () => {
-    it('should create and return task', async () => {
+    test('should create and return task', async () => {
       const input = { title: 'New Task', userId: 'user1', description: 'Test Task', category: 'work', priority: 'high' as const, status: 'pending' as const };
       const created = { id: '123', ...input };
       (taskRepoMock.create as any).mockResolvedValue(created);
@@ -51,7 +51,7 @@ describe('TaskService', () => {
       expect(taskRepoMock.create).toHaveBeenCalledWith(input);
     });
 
-    it('should throw AppError if creation failed', async () => {
+    test('should throw AppError if creation failed', async () => {
       (taskRepoMock.create as any).mockResolvedValue(null);
 
       await expect(service.createTaskForUser({
@@ -72,14 +72,14 @@ describe('TaskService', () => {
   });
 
   describe('deleteTask', () => {
-    it('should delete successfully', async () => {
+    test('should delete successfully', async () => {
       (taskRepoMock.delete as any).mockResolvedValue(true);
 
       await expect(service.deleteTask('task-1')).resolves.toBeUndefined();
       expect(taskRepoMock.delete).toHaveBeenCalledWith('task-1');
     });
 
-    it('should throw AppError if task not found', async () => {
+    test('should throw AppError if task not found', async () => {
       (taskRepoMock.delete as any).mockResolvedValue(false);
 
       await expect(service.deleteTask('task-404')).rejects.toBeInstanceOf(AppError);
@@ -88,7 +88,7 @@ describe('TaskService', () => {
   });
 
   describe('updateTask', () => {
-    it('should update and return task', async () => {
+    test('should update and return task', async () => {
       const updatedTask = { id: 'task-1', title: 'Updated Task' };
       (taskRepoMock.update as any).mockResolvedValue(updatedTask);
 
@@ -97,7 +97,7 @@ describe('TaskService', () => {
       expect(taskRepoMock.update).toHaveBeenCalledWith('task-1', { title: 'Updated Task' });
     });
 
-    it('should throw AppError if task not found', async () => {
+    test('should throw AppError if task not found', async () => {
       (taskRepoMock.update as any).mockResolvedValue(null);
 
       await expect(service.updateTask('task-404', { title: 'Nope' })).rejects.toBeInstanceOf(AppError);
@@ -106,7 +106,7 @@ describe('TaskService', () => {
   });
 
   describe('getById', () => {
-    it('should return task if found', async () => {
+    test('should return task if found', async () => {
       const task = { id: 'task-1', title: 'Found Task' };
       (taskRepoMock.getById as any).mockResolvedValue(task);
 
@@ -115,7 +115,7 @@ describe('TaskService', () => {
       expect(taskRepoMock.getById).toHaveBeenCalledWith('task-1');
     });
 
-    it('should throw AppError if task not found', async () => {
+    test('should throw AppError if task not found', async () => {
       (taskRepoMock.getById as any).mockResolvedValue(null);
 
       await expect(service.getById('missing')).rejects.toBeInstanceOf(AppError);

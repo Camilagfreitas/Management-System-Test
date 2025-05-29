@@ -22,7 +22,7 @@ describe('UserService', () => {
   });
 
   describe('getUserById', () => {
-    it('should return user when found', async () => {
+    test('should return user when found', async () => {
       const fakeUser = { id: '1', name: 'Alice', email: 'alice@example.com', password: 'hash' };
       (userRepoMock.getUserById as any).mockResolvedValue(fakeUser);
 
@@ -31,7 +31,7 @@ describe('UserService', () => {
       expect(userRepoMock.getUserById).toHaveBeenCalledWith('1');
     });
 
-    it('should return null when user not found', async () => {
+    test('should return null when user not found', async () => {
       (userRepoMock.getUserById as any).mockResolvedValue(null);
 
       const user = await service.getUserById('unknown');
@@ -40,7 +40,7 @@ describe('UserService', () => {
   });
 
   describe('createUser', () => {
-    it('should throw if email already in use', async () => {
+    test('should throw if email already in use', async () => {
       const existingUser = { id: '1', name: 'Bob', email: 'bob@example.com', password: 'hash' };
       (userRepoMock.getUserByEmail as any).mockResolvedValue(existingUser);
 
@@ -48,7 +48,7 @@ describe('UserService', () => {
       await expect(service.createUser({ name: 'Bob', email: 'bob@example.com', password: 'pass123' })).rejects.toHaveProperty('status', 409);
     });
 
-    it('should hash password and create user', async () => {
+    test('should hash password and create user', async () => {
       (userRepoMock.getUserByEmail as any).mockResolvedValue(null);
       const fakeHash = 'hashedPassword';
       vi.spyOn(hashUtils, 'hashPassword').mockResolvedValue(fakeHash);

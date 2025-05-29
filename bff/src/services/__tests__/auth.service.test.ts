@@ -24,7 +24,7 @@ describe('AuthService', () => {
     vi.resetAllMocks();
   });
 
-  it('should login successfully with valid credentials', async () => {
+  test('should login successfully with valid credentials', async () => {
     const fakeUser = {
       id: 'user-id-1',
       name: 'John Doe',
@@ -48,14 +48,14 @@ describe('AuthService', () => {
     });
   });
 
-  it('should throw AppError when user does not exist', async () => {
+  test('should throw AppError when user does not exist', async () => {
     (userRepoMock.getUserByEmail as any).mockResolvedValue(null);
 
     await expect(authService.login('notfound@example.com', 'any-password')).rejects.toBeInstanceOf(AppError);
     await expect(authService.login('notfound@example.com', 'any-password')).rejects.toHaveProperty('status', 401);
   });
 
-  it('should throw AppError when password is invalid', async () => {
+  test('should throw AppError when password is invalid', async () => {
     const fakeUser = {
       id: 'user-id-2',
       name: 'Jane Doe',

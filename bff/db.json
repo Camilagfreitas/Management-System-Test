@@ -59,6 +59,12 @@
       "name": "Test new",
       "email": "Testnew@email.com",
       "password": "$2b$10$75jJmk1V.vYCmHIIdijOQel/xKhpD5NA2yP0xxkT6DBMQZVvCYTIK"
+    },
+    {
+      "id": "6d2f90ce-219f-4ec7-b82c-ce0641945d80",
+      "name": "Camila",
+      "email": "camila@teste.com",
+      "password": "$2b$10$vIhDSZ7XNZ3o9FBtOtkoN.enIpAWzsa0O3PRgQPgxo8gPO4G7bfRi"
     }
   ],
   "tasks": [
@@ -88,15 +94,6 @@
       "category": "other test",
       "priority": "high",
       "status": "completed"
-    },
-    {
-      "id": "1b29d26c-38ce-4225-9b75-567a6e81c9f2",
-      "title": "Almoçar",
-      "description": "Almoçar",
-      "category": "Personal",
-      "priority": "High",
-      "status": "Pending",
-      "userId": "1"
     }
   ]
 }

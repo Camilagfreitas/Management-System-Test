@@ -1,5 +1,4 @@
-// tests/controllers/taskController.test.ts
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, expect, vi, beforeEach, test } from 'vitest';
 import { Request, Response } from 'express';
 import { TaskService } from '../../services/task.service';
 import { TaskController } from '../task.controller';
@@ -27,7 +26,7 @@ describe('TaskController', () => {
     vi.clearAllMocks();
   });
 
-  it('listByUser should return filtered tasks', async () => {
+  test('listByUser should return filtered tasks', async () => {
     const req = { params: { userId: '123' }, query: { status: 'done' } } as unknown as Request;
     const fakeTasks = [{ id: '1', title: 'Test' }];
     mockTaskService.getTasksByUserIdWithFilters = vi.fn().mockResolvedValue(fakeTasks);
@@ -38,7 +37,7 @@ describe('TaskController', () => {
     expect(mockRes.json).toHaveBeenCalledWith(fakeTasks);
   });
 
-  it('createForUser should return created task with status 201', async () => {
+  test('createForUser should return created task with status 201', async () => {
     const req = { body: { title: 'New Task' } } as unknown as Request;
     const createdTask = { id: '1', title: 'New Task' };
     mockTaskService.createTaskForUser = vi.fn().mockResolvedValue(createdTask);
@@ -50,7 +49,7 @@ describe('TaskController', () => {
     expect(mockRes.json).toHaveBeenCalledWith(createdTask);
   });
 
-  it('getById should return task by id', async () => {
+  test('getById should return task by id', async () => {
     const req = { params: { id: 'task-1' } } as unknown as Request;
     const task = { id: 'task-1', title: 'Read a book' };
     mockTaskService.getById = vi.fn().mockResolvedValue(task);
@@ -61,7 +60,7 @@ describe('TaskController', () => {
     expect(mockRes.json).toHaveBeenCalledWith(task);
   });
 
-  it('update should return updated task', async () => {
+  test('update should return updated task', async () => {
     const req = { params: { id: 'task-1' }, body: { title: 'Updated' } } as unknown as Request;
     const updatedTask = { id: 'task-1', title: 'Updated' };
     mockTaskService.updateTask = vi.fn().mockResolvedValue(updatedTask);
@@ -72,7 +71,7 @@ describe('TaskController', () => {
     expect(mockRes.json).toHaveBeenCalledWith(updatedTask);
   });
 
-  it('delete should call service and return 204', async () => {
+  test('delete should call service and return 204', async () => {
     const req = { params: { id: 'task-1' } } as unknown as Request;
     mockTaskService.deleteTask = vi.fn().mockResolvedValue(undefined);
 
@@ -83,7 +82,7 @@ describe('TaskController', () => {
     expect(mockRes.send).toHaveBeenCalled();
   });
 
-  it('should call next on service error', async () => {
+  test('should call next on service error', async () => {
     const req = { params: { id: 'task-1' } } as unknown as Request;
     const error = new Error('Something went wrong');
     mockTaskService.getById = vi.fn().mockRejectedValue(error);

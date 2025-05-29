@@ -18,7 +18,7 @@ describe('errorHandler middleware', () => {
     vi.clearAllMocks();
   });
 
-  it('should handle AppError and return custom status and message', () => {
+  test('should handle AppError and return custom status and message', () => {
     const appError = new AppError(404, 'Not found');
 
     errorHandler(appError, mockReq, mockRes, mockNext);
@@ -27,7 +27,7 @@ describe('errorHandler middleware', () => {
     expect(mockRes.json).toHaveBeenCalledWith({ error: 'Not found' });
   });
 
-  it('should handle unknown errors and return 500', () => {
+  test('should handle unknown errors and return 500', () => {
     const genericError = new Error('Something broke');
 
     errorHandler(genericError, mockReq, mockRes, mockNext);

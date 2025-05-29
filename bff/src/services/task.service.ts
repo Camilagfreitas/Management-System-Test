@@ -10,10 +10,7 @@ export class TaskService {
     try {
       const tasks = await this.taskRepository.getByUserIdWithFilters(userId, filters);
       return tasks ?? [];
-    } catch (err) {
-      if (err instanceof AppError) {
-        throw err;
-      }
+    } catch {
       throw new AppError(500, 'Error fetching tasks');
     }
   }

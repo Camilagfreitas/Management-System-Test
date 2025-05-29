@@ -26,7 +26,7 @@ describe('AuthController', () => {
     vi.clearAllMocks();
   });
 
-  it('responds with status 200 and login data when credentials are valid', async () => {
+  test('responds with status 200 and login data when credentials are valid', async () => {
     const fakeResponse = { token: 'abc.123', user: { id: '1' } };
     mockLogin.mockResolvedValue(fakeResponse);
 
@@ -37,7 +37,7 @@ describe('AuthController', () => {
     expect(res.json).toHaveBeenCalledWith(fakeResponse);
   });
 
-  it('calls next with error if login throws', async () => {
+  test('calls next with error if login throws', async () => {
     const error = new Error('Invalid credentials');
     mockLogin.mockRejectedValue(error);
 

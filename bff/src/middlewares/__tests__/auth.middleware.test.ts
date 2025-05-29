@@ -17,7 +17,7 @@ describe('ensureAuth middleware', () => {
     mockNext = vi.fn();
   });
 
-  it('throws AppError if no Authorization header', () => {
+  test('throws AppError if no Authorization header', () => {
     expect(() => ensureAuth(mockReq, mockRes, mockNext)).toThrow(AppError);
     try {
       ensureAuth(mockReq, mockRes, mockNext);
@@ -29,7 +29,7 @@ describe('ensureAuth middleware', () => {
     }
   });
 
-  it('throws AppError if Authorization header does not start with Bearer', () => {
+  test('throws AppError if Authorization header does not start with Bearer', () => {
     mockReq.headers.authorization = 'Basic abcdef';
     expect(() => ensureAuth(mockReq, mockRes, mockNext)).toThrow(AppError);
     try {
@@ -42,7 +42,7 @@ describe('ensureAuth middleware', () => {
     }
   });
 
-  it('throws AppError if token is invalid', () => {
+  test('throws AppError if token is invalid', () => {
     mockReq.headers.authorization = 'Bearer invalidtoken';
 
     vi.spyOn(jwtUtils, 'verifyToken').mockImplementation(() => {
@@ -60,7 +60,7 @@ describe('ensureAuth middleware', () => {
     }
   });
 
-  it('calls next and attaches decoded user if token is valid', () => {
+  test('calls next and attaches decoded user if token is valid', () => {
     const decodedUser = { id: '123', email: 'test@example.com' };
     mockReq.headers.authorization = 'Bearer validtoken';
 

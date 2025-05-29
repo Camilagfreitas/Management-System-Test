@@ -22,7 +22,7 @@ describe('UserController', () => {
     vi.clearAllMocks();
   });
 
-  it('getById should return user data', async () => {
+  test('getById should return user data', async () => {
     const req = { params: { id: 'user-1' } } as unknown as Request;
     const mockUser = { id: 'user-1', name: 'John Doe' };
     mockUserService.getUserById = vi.fn().mockResolvedValue(mockUser);
@@ -33,7 +33,7 @@ describe('UserController', () => {
     expect(mockRes.json).toHaveBeenCalledWith(mockUser);
   });
 
-  it('createUser should return new user with status 201', async () => {
+  test('createUser should return new user with status 201', async () => {
     const req = { body: { name: 'Jane Doe', email: 'jane@example.com' } } as unknown as Request;
     const createdUser = { id: 'user-2', ...req.body };
     mockUserService.createUser = vi.fn().mockResolvedValue(createdUser);
@@ -45,7 +45,7 @@ describe('UserController', () => {
     expect(mockRes.json).toHaveBeenCalledWith(createdUser);
   });
 
-  it('getById should call next on error', async () => {
+  test('getById should call next on error', async () => {
     const req = { params: { id: 'user-1' } } as unknown as Request;
     const error = new Error('User not found');
     mockUserService.getUserById = vi.fn().mockRejectedValue(error);
@@ -55,7 +55,7 @@ describe('UserController', () => {
     expect(mockNext).toHaveBeenCalledWith(error);
   });
 
-  it('createUser should call next on error', async () => {
+  test('createUser should call next on error', async () => {
     const req = { body: { name: 'Jane' } } as unknown as Request;
     const error = new Error('Validation failed');
     mockUserService.createUser = vi.fn().mockRejectedValue(error);
