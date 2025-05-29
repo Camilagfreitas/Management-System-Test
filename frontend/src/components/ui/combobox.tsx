@@ -1,20 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "@/ui/components/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandItem,
-  CommandList,
-} from "@/ui/components/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/ui/components/popover";
+
 import { translateCategoryAndPriority } from "@/features/taskDashboard/utils/taskUtils";
+import { Popover, PopoverContent, PopoverTrigger } from "./popover";
+import { Button } from "./button";
+import { CommandEmpty, CommandGroup, CommandItem, CommandList } from "cmdk";
+import { Command } from "lucide-react";
 
 type FilterGroup = {
   group: string;

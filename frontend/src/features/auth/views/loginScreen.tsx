@@ -70,7 +70,7 @@ export default function LoginScreen() {
               <Input
                 id="password"
                 type="password"
-                placeholder="••••••••"
+                placeholder="senha"
                 className="border-cyan-200"
                 {...register("password")}
               />
