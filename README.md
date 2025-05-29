@@ -1,4 +1,4 @@
-# Monorepo Project: BFF + Frontend
+# Management System: BFF + Frontend
 
 Este projeto é um monorepo que contém dois principais pacotes:
 
