@@ -1,6 +1,6 @@
 import type { RouteObject } from "react-router-dom";
-import RegisterScreen from "./views/registerScreen";
-import LoginScreen from "./views/loginScreen";
+import RegisterScreen from "./pages/registerPage";
+import LoginScreen from "./pages/loginPage";
 
 export const authRoutes: RouteObject[] = [
   {

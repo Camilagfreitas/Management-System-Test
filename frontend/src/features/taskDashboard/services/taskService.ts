@@ -1,7 +1,6 @@
 import api from "@/lib/api";
 import API_ROUTES from "@/services/apiRoutes";
 import type { Task } from "../types/task";
-
 export const createTask = async (task: Omit<Task, "id">) => {
   const response = await api.post(API_ROUTES.CREATE_TASK, task);
   return response.data;
@@ -26,7 +25,7 @@ export const getFilteredTasks = async (
     group: string;
     value: string;
   }
-) => {
+): Promise<Task[]> => {
   const mappedFilters =
     filter && filter.group
       ? { [filter.group.toLowerCase()]: filter.value }
@@ -36,6 +35,6 @@ export const getFilteredTasks = async (
 
   const url = `${API_ROUTES.GET_TASKS(userId)}${params ? `?${params}` : ""}`;
 
-  const response = await api.get(url);
+  const response = await api.get<Task[]>(url);
   return response.data;
 };

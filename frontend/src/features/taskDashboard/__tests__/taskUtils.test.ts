@@ -1,4 +1,3 @@
-import { describe, it, expect } from "vitest";
 import {
   filterGroups,
   priorityColors,
@@ -6,7 +5,7 @@ import {
 } from "../utils/taskUtils";
 
 describe("translateCategoryAndPriority", () => {
-  it("should correctly translate known categories and priorities", () => {
+  test("should correctly translate known categories and priorities", () => {
     expect(translateCategoryAndPriority("Category")).toBe("Categoria");
     expect(translateCategoryAndPriority("Work")).toBe("Trabalho");
     expect(translateCategoryAndPriority("Study")).toBe("Estudos");
@@ -17,13 +16,13 @@ describe("translateCategoryAndPriority", () => {
     expect(translateCategoryAndPriority("Low")).toBe("Baixa");
   });
 
-  it("should return the original value if it is not found in the map", () => {
+  test("should return the original value if it is not found in the map", () => {
     expect(translateCategoryAndPriority("Unknown")).toBe("Unknown");
   });
 });
 
 describe("priorityColors", () => {
-  it("should return correct CSS classes for each priority level", () => {
+  test("should return correct CSS classes for each priority level", () => {
     expect(priorityColors.High).toBe("bg-red-100 text-red-800");
     expect(priorityColors.Medium).toBe("bg-yellow-100 text-yellow-800");
     expect(priorityColors.Low).toBe("bg-green-100 text-green-800");
@@ -31,18 +30,18 @@ describe("priorityColors", () => {
 });
 
 describe("filterGroups", () => {
-  it("should contain two groups: Category and Priority", () => {
+  test("should contain two groups: Category and Priority", () => {
     expect(filterGroups).toHaveLength(2);
     expect(filterGroups[0].group).toBe("Category");
     expect(filterGroups[1].group).toBe("Priority");
   });
 
-  it("should include the correct options for Category", () => {
+  test("should include the correct options for Category", () => {
     const categoryOptions = filterGroups[0].options.map((opt) => opt.value);
     expect(categoryOptions).toEqual(["Work", "Personal", "Study"]);
   });
 
-  it("should include the correct options for Priority", () => {
+  test("should include the correct options for Priority", () => {
     const priorityOptions = filterGroups[1].options.map((opt) => opt.value);
     expect(priorityOptions).toEqual(["High", "Medium", "Low"]);
   });

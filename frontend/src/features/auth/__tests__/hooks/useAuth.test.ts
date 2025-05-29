@@ -1,79 +1,103 @@
-import { vi, expect, beforeEach } from "vitest";
-import { act, renderHook, waitFor } from "@testing-library/react";
-import { useLogin } from "../../hooks/useAuth";
+import { vi, expect } from "vitest";
+import { act, waitFor } from "@testing-library/react";
+import { useCreateUser, useLogin } from "../../hooks/useAuth";
 import * as authService from "../../services/authService";
-
-export const mockMutate = vi.fn();
-
-vi.mock("@tanstack/react-query", async () => {
-  const actual = await vi.importActual("@tanstack/react-query");
-  return {
-    ...actual,
-    useMutation: () => ({
-      mutate: mockMutate,
-      isLoading: false,
-      isError: false,
-      isSuccess: false,
-      data: null,
-      error: null,
-    }),
-  };
-});
+import { renderHook } from "@/test/utils";
 
 describe("useAuth hooks", () => {
-  beforeEach(() => {
-    vi.resetAllMocks();
-  });
+  describe("useLogin", () => {
+    const mockLogin = vi.fn();
+    beforeEach(() => {
+      vi.spyOn(authService, "login").mockImplementation(mockLogin);
+    });
+    afterEach(() => {
+      vi.clearAllMocks();
+    });
 
-  test("useLogin deve chamar login com os dados corretos", async () => {
-    const loginMock = vi
-      .spyOn(authService, "login")
-      .mockResolvedValue({ token: "abc123" });
+    test("should call login and handle success", async () => {
+      mockLogin.mockResolvedValueOnce({
+        token: "abc123",
+      });
+      const { result } = renderHook(() => useLogin());
+      act(() =>
+        result.current.mutate({ email: "john@example.com", password: "123456" })
+      );
+      await waitFor(() => {
+        expect(mockLogin).toHaveBeenCalledWith({
+          email: "john@example.com",
+          password: "123456",
+        });
+        expect(result.current.isSuccess).toBe(true);
+      });
+    });
 
-    const { result } = renderHook(() => useLogin());
-
-    act(() =>
-      result.current.mutate({ email: "john@example.com", password: "123456" })
-    );
-    await waitFor(() => {
-      expect(loginMock).toHaveBeenCalledWith({
-        email: "john@example.com",
-        password: "123456",
+    test("should call login and handle error", async () => {
+      mockLogin.mockRejectedValueOnce(new Error("Error Login"));
+      const { result } = renderHook(() => useLogin());
+      act(() =>
+        result.current.mutate({ email: "john@example.com", password: "123456" })
+      );
+      await waitFor(() => {
+        expect(mockLogin).toHaveBeenCalledWith({
+          email: "john@example.com",
+          password: "123456",
+        });
+        expect(result.current.isError).toBe(true);
       });
     });
   });
 
-  test("useCreateUser deve chamar register com os dados corretos", async () => {
-    const registerMock = vi
-      .spyOn(authService, "register")
-      .mockResolvedValue({ id: "1", name: "John" });
-
-    const { result } = renderHook(() => useLogin());
-
-    result.current.mutate({
-      email: "john@example.com",
-      password: "123456",
+  describe("useCreateUser", () => {
+    const mockRegister = vi.fn();
+    beforeEach(() => {
+      vi.spyOn(authService, "register").mockImplementation(mockRegister);
+    });
+    afterEach(() => {
+      vi.clearAllMocks();
     });
 
-    await waitFor(() => {
-      expect(registerMock).toHaveBeenCalledWith({
-        email: "john@example.com",
+    test("should call register and handle success", async () => {
+      mockRegister.mockResolvedValueOnce({
+        userId: "abc123",
+        name: "Camila",
         password: "123456",
-        name: "John",
+      });
+      const { result } = renderHook(() => useCreateUser());
+      act(() =>
+        result.current.mutate({
+          name: "Camila",
+          password: "123456",
+          email: "camila@example.com",
+        })
+      );
+      await waitFor(() => {
+        expect(mockRegister).toHaveBeenCalledWith({
+          name: "Camila",
+          password: "123456",
+          email: "camila@example.com",
+        });
+        expect(result.current.isSuccess).toBe(true);
       });
     });
-  });
 
-  test("useLogin deve lidar com erro", async () => {
-    const { result } = renderHook(() => useLogin());
-
-    result.current.mutate({
-      email: "wrong@example.com",
-      password: "wrongpass",
-    });
-
-    await waitFor(() => {
-      expect(result.current.isError).toBe(true);
+    test("should call login and handle error", async () => {
+      mockRegister.mockRejectedValueOnce(new Error("Error Login"));
+      const { result } = renderHook(() => useCreateUser());
+      act(() =>
+        result.current.mutate({
+          name: "Camila",
+          password: "123456",
+          email: "camila@example.com",
+        })
+      );
+      await waitFor(() => {
+        expect(mockRegister).toHaveBeenCalledWith({
+          name: "Camila",
+          password: "123456",
+          email: "camila@example.com",
+        });
+        expect(result.current.isError).toBe(true);
+      });
     });
   });
 });

@@ -1,6 +1,6 @@
-import { renderHook } from "@testing-library/react";
 import type { Task } from "@/features/taskDashboard/types/task";
 import { useGetTaskSummary } from "../../hooks/useAnalytics";
+import { renderHook } from "@/test/utils";
 
 describe("useGetTaskSummary", () => {
   it("returns correct summary for completed and open tasks", () => {

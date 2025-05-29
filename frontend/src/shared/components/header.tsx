@@ -1,14 +1,14 @@
 import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/features/auth/context/authContext";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/ui/components/button";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/ui/components/sheet";
 
 export default function Header() {
   const navigate = useNavigate();

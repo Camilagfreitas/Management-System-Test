@@ -1,6 +1,6 @@
-// services/authService.ts
 import api from "@/lib/api";
 import API_ROUTES from "@/services/apiRoutes";
+import type { User } from "../context/authContext";
 
 export type NewUser = {
   name: string;
@@ -20,5 +20,5 @@ export const register = async (newUser: NewUser) => {
 
 export const login = async (data: LoginData) => {
   const response = await api.post(API_ROUTES.LOGIN, data);
-  return response.data;
+  return response.data as User;
 };
