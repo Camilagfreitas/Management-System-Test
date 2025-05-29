@@ -63,42 +63,6 @@
   ],
   "tasks": [
     {
-      "id": "2",
-      "userId": "a752",
-      "title": "Comprar pão",
-      "description": "Ir ao mercado",
-      "category": "Personal",
-      "priority": "Medium",
-      "status": "Completed"
-    },
-    {
-      "id": "09f5",
-      "title": "Comprar ração",
-      "description": "Comprar ração para o gato",
-      "category": "Personal",
-      "priority": "Medium",
-      "status": "Completed",
-      "userId": "1"
-    },
-    {
-      "id": "27b5",
-      "title": "Estudar Angular",
-      "description": "Estudar angular",
-      "category": "Work",
-      "priority": "Medium",
-      "status": "Pending",
-      "userId": "1"
-    },
-    {
-      "id": "477d",
-      "title": "Comprar água",
-      "description": "Comprar água",
-      "category": "Personal",
-      "priority": "High",
-      "status": "Completed",
-      "userId": "1"
-    },
-    {
       "id": "3781bcc2-550c-448d-8084-bcca9f96357c",
       "userId": "66479afe-0fcc-4afd-97f0-2a373b44ddd9",
       "title": "Test",
@@ -124,6 +88,15 @@
       "category": "other test",
       "priority": "high",
       "status": "completed"
+    },
+    {
+      "id": "507ecd9f-6fc5-49e5-897c-2311f7bdebcf",
+      "title": "estudar",
+      "description": "e",
+      "category": "Personal",
+      "priority": "Medium",
+      "status": "Pending",
+      "userId": "1"
     }
   ]
 }

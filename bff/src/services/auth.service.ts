@@ -5,7 +5,7 @@ import { generateToken } from '../utils/jwt';
 export class AuthService {
   constructor(private userRepo = new UserRepository()) {}
 
-  async login(email: string, password: string): Promise<{ token: string; user: { id: string; name: string; } }> {
+  async login(email: string, password: string): Promise<{ id: string; name: string; token: string; }> {
 
     const user = await this.userRepo.getUserByEmail(email);
     if (!user) {
@@ -18,6 +18,6 @@ export class AuthService {
     }
 
     const token = generateToken({ id: user.id, email: user.email });
-    return {token, user: { id: user.id, name: user.name }};
+    return { id: user.id, name: user.name, token: token };
   }
 }
