@@ -8,13 +8,15 @@ import {
 import { Button } from "@/ui/components/button";
 import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/features/auth/context/authContext";
 
 export default function Header() {
   const navigate = useNavigate();
+  const { userName } = useAuth();
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow px-6 py-4 z-2">
       <div className="flex items-center justify-between">
-        <span className="text-xl font-bold text-blue-700">Tarefas</span>
+        <span className="text-l font-bold text-cyan-800">Olá, {userName}!</span>
 
         <nav className="hidden md:flex gap-4">
           <Button variant="ghost" onClick={() => navigate("../dashboard")}>
@@ -40,7 +42,7 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent side="left" className="bg-gray-100">
             <SheetHeader className="bg-white p-6">
-              <SheetTitle className="text-blue-700">Menu</SheetTitle>
+              <SheetTitle className="text-cyan-800">Menu</SheetTitle>
             </SheetHeader>
             <div className="mt-6 flex flex-col gap-4">
               <Button variant="ghost" onClick={() => navigate("../dashboard")}>

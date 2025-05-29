@@ -8,7 +8,7 @@ import EditTaskModal from "./components/editTaskModal";
 import NewTaskModal from "./components/newTaskModal";
 import TaskList from "./components/taskList";
 import { useFilteredTasks } from "../hooks/useTask";
-
+import { useAuth } from "@/features/auth/context/authContext";
 export default function TaskScreen() {
   const [isNewTaskModalOpen, setIsNewTaskModalOpen] = useState(false);
   const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false);
@@ -19,30 +19,32 @@ export default function TaskScreen() {
   }>({ group: "", value: "" });
 
   const [search, setSearch] = useState("");
-  const { data: tasks } = useFilteredTasks("1", filter);
+  const { userId } = useAuth();
+  const { data: tasks } = useFilteredTasks(userId, filter);
 
   return (
     <>
-      <div className="bg-gray-100 min-h-screen p-6 pt-22">
-        <h1 className="text-3xl font-extrabold mb-4 text-blue-700">
+      <div className="bg-gray-100 min-h-screen p-20 pt-36">
+        <h1 className="text-4xl  mb-4 text-cyan-800 text-center">
           Lista de Tarefas
         </h1>
 
         <div className="flex justify-end">
           <Button
             variant="default"
-            className="rounded-full px-6 py-3 shadow-lg bg-blue-600 hover:bg-blue-700 text-white"
+            className="rounded-full px-6 py-3 shadow-lg bg-cyan-600 hover:bg-cyan-800 text-white"
             onClick={() => setIsNewTaskModalOpen(true)}
           >
             Adicionar nova tarefa
           </Button>
         </div>
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-6">
+
+        <div className="flex flex-col sm:flex-row items-center pt-6 justify-between gap-4">
           <Input
             placeholder="Buscar por título..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full sm:max-w-md border border-gray-300 rounded-lg text-gray-700 bg-white"
+            className="w-full sm:max-w-md border border-gray-300 rounded-2xl text-gray-700 bg-white h-11"
           />
           <ComboboxPopover
             groups={filterGroups}

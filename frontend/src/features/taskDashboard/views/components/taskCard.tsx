@@ -45,7 +45,7 @@ export default function TaskCard({
             setEditTaskModalOpen?.(true);
           }}
         >
-          <Pencil className="h-5 w-5 text-blue-500 hover:text-blue-700" />
+          <Pencil className="h-5 w-5 text-cyan-500 hover:text-cyan-800" />
         </Button>
         <Button
           variant={"ghost"}
@@ -56,13 +56,13 @@ export default function TaskCard({
         </Button>
       </div>
 
-      <h2 className="text-xl font-semibold text-blue-600 mb-2 truncate">
+      <h2 className="text-xl font-semibold text-cyan-600 mb-2 truncate">
         {task.title}
       </h2>
       <p className="text-gray-700 mb-4">{task.description}</p>
 
       <div className="flex flex-wrap gap-3 text-sm items-center">
-        <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">
+        <span className="inline-block bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full font-medium">
           Categoria: {translateCategoryAndPriority(task.category)}
         </span>
         <span
@@ -74,7 +74,7 @@ export default function TaskCard({
         </span>
 
         <Select value={task.status} onValueChange={handleStatusChange}>
-          <SelectTrigger className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium w-[160px]">
+          <SelectTrigger className="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full font-medium w-[160px]">
             <SelectValue placeholder="Status" />
           </SelectTrigger>
           <SelectContent>

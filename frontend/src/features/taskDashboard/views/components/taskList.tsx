@@ -34,7 +34,7 @@ export default function TaskList({
     <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
       {Object.entries(groupedTasks).map(([status, taskList]) => (
         <div key={status}>
-          <h2 className="text-xl font-bold text-blue-700 mb-4">
+          <h2 className="text-xl font-bold text-cyan-800 mb-4">
             {statusLabels[status as keyof typeof groupedTasks]}
           </h2>
           {taskList.length === 0 ? (

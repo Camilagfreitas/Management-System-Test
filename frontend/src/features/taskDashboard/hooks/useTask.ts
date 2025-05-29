@@ -4,34 +4,19 @@ import {
   createTask,
   deleteTask,
   getFilteredTasks,
-  getUserTasks,
   updateTask,
 } from "../services/taskService";
 import { toast } from "sonner";
 
-export function useGetUserTasks(userId: string | number) {
-  return useQuery<Task[]>({
-    queryKey: ["userTasks", userId],
-    queryFn: async () => {
-      return await getUserTasks(userId);
-    },
-    enabled: !!userId,
-  });
-}
-
 export function useFilteredTasks(
   userId: string,
-  filters: {
-    group: string;
-    value: string;
-  }
+  filters?: { group: string; value: string }
 ) {
   return useQuery<Task[]>({
-    queryKey: ["filteredTasks", userId, filters],
+    queryKey: ["filteredTasks", filters],
     queryFn: async () => {
       return await getFilteredTasks(userId, filters);
     },
-    enabled: !!userId,
   });
 }
 

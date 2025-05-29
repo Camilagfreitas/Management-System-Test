@@ -80,7 +80,7 @@ export default function EditTaskModal({
     >
       <DialogContent className="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-md">
         <DialogHeader>
-          <DialogTitle className="text-blue-700 text-xl font-semibold mb-2">
+          <DialogTitle className="text-cyan-800 text-xl font-semibold mb-2">
             Editar Tarefa
           </DialogTitle>
         </DialogHeader>
@@ -88,7 +88,7 @@ export default function EditTaskModal({
           <input
             {...register("title")}
             placeholder="Título"
-            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-100"
             defaultValue={task.title}
           />
           {errors.title && (
@@ -98,7 +98,7 @@ export default function EditTaskModal({
           <textarea
             {...register("description")}
             placeholder="Descrição"
-            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-100"
             defaultValue={task.description}
           />
           {errors.description && (
@@ -106,7 +106,7 @@ export default function EditTaskModal({
           )}
 
           <Select {...register("category")} defaultValue={task.category}>
-            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
+            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-100 text-gray-500">
               <SelectValue placeholder="Selecione uma categoria" />
             </SelectTrigger>
             <SelectContent>
@@ -120,7 +120,7 @@ export default function EditTaskModal({
           )}
 
           <Select {...register("priority")} defaultValue={task.priority}>
-            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
+            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-100 text-gray-500">
               <SelectValue placeholder="Selecione a prioridade" />
             </SelectTrigger>
             <SelectContent>
@@ -140,7 +140,7 @@ export default function EditTaskModal({
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-blue-600 text-white hover:bg-blue-700"
+              className="bg-cyan-600 text-white hover:bg-cyan-800"
             >
               {isSubmitting ? "Salvando..." : "Salvar"}
             </Button>

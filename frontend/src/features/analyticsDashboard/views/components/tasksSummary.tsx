@@ -14,10 +14,10 @@ export default function TaskSummary({ tasks }: TaskSummaryProps) {
   return (
     <Card className="flex justify-around p-6 bg-white shadow-md rounded-lg">
       <CardContent className="flex flex-col items-center">
-        <CardTitle className="text-blue-600">Tarefas Concluídas</CardTitle>
+        <CardTitle className="text-cyan-600">Tarefas Concluídas</CardTitle>
         <Badge
           variant="default"
-          className="text-2xl font-bold px-6 py-3 text-blue-600"
+          className="text-2xl font-bold px-6 py-3 text-cyan-600"
         >
           {completed}
         </Badge>

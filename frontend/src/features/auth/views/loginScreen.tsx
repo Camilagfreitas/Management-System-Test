@@ -7,6 +7,7 @@ import { Input } from "@/ui/components/input";
 import { Label } from "@/ui/components/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
 import { useLogin } from "../hooks/useAuth";
+import { useAuth } from "../context/authContext";
 
 const loginSchema = z.object({
   email: z.string().email("Email inválido"),
@@ -17,8 +18,8 @@ type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function LoginScreen() {
   const navigate = useNavigate();
-  const { mutate, error } = useLogin();
-
+  const { mutate, isError } = useLogin();
+  const { setUser } = useAuth();
   const {
     register,
     handleSubmit,
@@ -27,16 +28,14 @@ export default function LoginScreen() {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: LoginFormData) => {
     mutate(data, {
       onSuccess: (response) => {
-        console.log("Login feito:", response);
+        setUser(response);
+        navigate("/dashboard");
       },
     });
   };
-  if (error) {
-    console.error("Erro ao fazer login:", error);
-  }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
@@ -54,7 +53,7 @@ export default function LoginScreen() {
                 id="email"
                 type="email"
                 placeholder="seu@email.com"
-                className="border-blue-200"
+                className="border-cyan-200"
                 {...register("email")}
               />
               {errors.email && (
@@ -72,7 +71,7 @@ export default function LoginScreen() {
                 id="password"
                 type="password"
                 placeholder="••••••••"
-                className="border-blue-200"
+                className="border-cyan-200"
                 {...register("password")}
               />
               {errors.password && (
@@ -80,11 +79,16 @@ export default function LoginScreen() {
                   {errors.password.message}
                 </p>
               )}
+              {isError && (
+                <p className="text-sm text-red-500 mt-1">
+                  Email ou senha inválidos
+                </p>
+              )}
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-blue-600 text-white hover:bg-blue-700"
+              className="w-full bg-cyan-600 text-white hover:bg-cyan-800"
             >
               Entrar
             </Button>
@@ -92,7 +96,7 @@ export default function LoginScreen() {
             <Button
               type="button"
               variant="link"
-              className="w-full mt-2 text-blue-600 hover:text-blue-800"
+              className="w-full mt-2 text-cyan-600 hover:text-cyan-800"
               onClick={() => navigate("/register")}
             >
               Cadastre-se

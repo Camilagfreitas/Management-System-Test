@@ -58,7 +58,7 @@ export default function RegisterScreen() {
                 id="name"
                 type="text"
                 placeholder="Seu nome"
-                className="border-blue-200"
+                className="border-cyan-200"
                 {...register("name")}
               />
               {errors.name && (
@@ -76,7 +76,7 @@ export default function RegisterScreen() {
                 id="email"
                 type="email"
                 placeholder="seu@email.com"
-                className="border-blue-200"
+                className="border-cyan-200"
                 {...register("email")}
               />
               {errors.email && (
@@ -94,7 +94,7 @@ export default function RegisterScreen() {
                 id="password"
                 type="password"
                 placeholder="••••••••"
-                className="border-blue-200"
+                className="border-cyan-200"
                 {...register("password")}
               />
               {errors.password && (
@@ -106,7 +106,7 @@ export default function RegisterScreen() {
 
             <Button
               type="submit"
-              className="w-full bg-blue-600 text-white hover:bg-blue-700"
+              className="w-full bg-cyan-600 text-white hover:bg-cyan-800"
             >
               Cadastrar
             </Button>
@@ -114,7 +114,7 @@ export default function RegisterScreen() {
             <Button
               type="button"
               variant="link"
-              className="w-full mt-2 text-blue-600 hover:text-blue-800"
+              className="w-full mt-2 text-cyan-600 hover:text-cyan-800"
               onClick={() => navigate("/")}
             >
               Já tem uma conta? Entrar

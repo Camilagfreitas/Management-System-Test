@@ -1,17 +1,8 @@
 import api from "@/lib/api";
 import API_ROUTES from "@/services/apiRoutes";
 import type { Task } from "../types/task";
-
-export const getUserTasks = async (userId: string | number) => {
-  const response = await api.get(`${API_ROUTES.USERS}/${userId}/tasks`);
-  return response.data;
-};
-
 export const createTask = async (task: Omit<Task, "id">) => {
-  const response = await api.post(
-    `${API_ROUTES.USERS}/${task.userId}/tasks`,
-    task
-  );
+  const response = await api.post(API_ROUTES.CREATE_TASK, task);
   return response.data;
 };
 
@@ -19,7 +10,7 @@ export const updateTask = async (
   taskId: string,
   updatedData: Partial<Task>
 ) => {
-  const response = await api.patch(API_ROUTES.TASK_BY_ID(taskId), updatedData);
+  const response = await api.put(API_ROUTES.TASK_BY_ID(taskId), updatedData);
   return response.data;
 };
 
@@ -30,18 +21,20 @@ export const deleteTask = async (taskId: string) => {
 
 export const getFilteredTasks = async (
   userId: string,
-  filters: {
+  filter?: {
     group: string;
     value: string;
   }
 ) => {
-  const mappedFilters = {
-    [filters.group.toLowerCase()]: filters.value,
-  };
+  const mappedFilters =
+    filter && filter.group
+      ? { [filter.group.toLowerCase()]: filter.value }
+      : {};
 
   const params = new URLSearchParams(mappedFilters).toString();
-  const response = await api.get(
-    `${API_ROUTES.USERS}/${userId}/filterTasks?${params}`
-  );
+
+  const url = `${API_ROUTES.GET_TASKS(userId)}${params ? `?${params}` : ""}`;
+
+  const response = await api.get(url);
   return response.data;
 };

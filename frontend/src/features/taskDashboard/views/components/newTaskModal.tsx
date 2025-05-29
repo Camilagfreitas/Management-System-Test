@@ -63,7 +63,7 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-md">
         <DialogHeader>
-          <DialogTitle className="text-blue-700 text-xl font-semibold mb-2">
+          <DialogTitle className="text-cyan-800 text-xl font-semibold mb-2">
             Adicionar Nova Tarefa
           </DialogTitle>
         </DialogHeader>
@@ -73,7 +73,7 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
             type="text"
             placeholder="Título"
             {...register("title")}
-            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-100"
           />
           {errors.title && (
             <span className="text-sm text-red-500">{errors.title.message}</span>
@@ -82,7 +82,7 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
           <textarea
             placeholder="Descrição"
             {...register("description")}
-            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-100"
           />
           {errors.description && (
             <span className="text-sm text-red-500">
@@ -91,7 +91,7 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
           )}
 
           <Select onValueChange={(value) => setValue("category", value)}>
-            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
+            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-100 text-gray-500">
               <SelectValue placeholder="Selecione uma categoria" />
             </SelectTrigger>
             <SelectContent>
@@ -111,7 +111,7 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
               setValue("priority", value as "High" | "Medium" | "Low")
             }
           >
-            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 text-gray-500">
+            <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-100 text-gray-500">
               <SelectValue placeholder="Selecione a prioridade" />
             </SelectTrigger>
             <SelectContent>
@@ -137,7 +137,7 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
             </Button>
             <Button
               type="submit"
-              className="bg-blue-600 text-white hover:bg-blue-700"
+              className="bg-cyan-600 text-white hover:bg-cyan-800"
             >
               Adicionar
             </Button>

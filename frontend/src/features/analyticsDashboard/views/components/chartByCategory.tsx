@@ -33,7 +33,7 @@ export default function ChartByCategory({ tasks }: ChartByCategoryProps) {
   return (
     <Card className="w-full bg-white shadow-md">
       <CardHeader>
-        <CardTitle className="text-blue-500">Tarefas por Categoria</CardTitle>
+        <CardTitle className="text-cyan-500">Tarefas por Categoria</CardTitle>
       </CardHeader>
       <CardContent className="h-72">
         <ResponsiveContainer width="100%" height="100%">

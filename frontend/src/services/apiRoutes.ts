@@ -1,10 +1,9 @@
 const API_ROUTES = {
+  LOGIN: "/auth/login",
   USERS: "/users",
   CREATE_USER: `/users`,
-
-  USER_TASKS: (userId: string | number) => `/users/${userId}/tasks`,
-  CREATE_TASK: (userId: string | number) => `/users/${userId}/tasks`,
-  FILTER_TASKS: (userId: string | number) => `/users/${userId}/filterTasks`,
+  GET_TASKS: (userId: string | number) => `/tasks/users/${userId}`,
+  CREATE_TASK: `/tasks`,
   TASK_BY_ID: (taskId: string) => `/tasks/${taskId}`,
 };
 
