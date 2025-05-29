@@ -32,11 +32,11 @@ describe('TaskService', () => {
       expect(taskRepoMock.getByUserIdWithFilters).toHaveBeenCalledWith('user1', { status: 'open' });
     });
 
-    it('should throw AppError if no tasks found', async () => {
+    it('should return empty array if no tasks found', async () => {
       (taskRepoMock.getByUserIdWithFilters as any).mockResolvedValue([]);
 
-      await expect(service.getTasksByUserIdWithFilters('user1', {})).rejects.toBeInstanceOf(AppError);
-      await expect(service.getTasksByUserIdWithFilters('user1', {})).rejects.toHaveProperty('status', 404);
+      const tasks = await service.getTasksByUserIdWithFilters('user1', { status: 'open' });
+      expect(tasks).toEqual([]);
     });
   });
 
