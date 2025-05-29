@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { Button } from "@/ui/components/button";
-import { Input } from "@/ui/components/input";
 import type { Task } from "../types/task";
-import { ComboboxPopover } from "@/ui/components/combobox";
 import { filterGroups } from "../utils/taskUtils";
 import EditTaskModal from "./components/editTaskModal";
 import NewTaskModal from "./components/newTaskModal";
 import TaskList from "./components/taskList";
 import { useFilteredTasks } from "../hooks/useTask";
 import { useAuth } from "@/features/auth/context/authContext";
+import { FallbackWrapper } from "@/shared/layout/fallbackWrapper";
+import { Button } from "@/components/ui/button";
+import { ComboboxPopover } from "@/components/ui/combobox";
+import { Input } from "@/components/ui/input";
+
 export default function TaskScreen() {
   const [isNewTaskModalOpen, setIsNewTaskModalOpen] = useState(false);
   const [isEditTaskModalOpen, setIsEditTaskModalOpen] = useState(false);
@@ -20,12 +22,18 @@ export default function TaskScreen() {
 
   const [search, setSearch] = useState("");
   const { userId } = useAuth();
-  const { data: tasks } = useFilteredTasks(userId, filter);
+
+  const {
+    data: tasks,
+    isLoading,
+    isError,
+    error,
+  } = useFilteredTasks(userId, filter);
 
   return (
-    <>
+    <FallbackWrapper isLoading={isLoading} isError={isError} error={error}>
       <div className="bg-gray-100 min-h-screen p-20 pt-36">
-        <h1 className="text-4xl  mb-4 text-cyan-800 text-center">
+        <h1 className="text-4xl mb-4 text-cyan-800 text-center">
           Lista de Tarefas
         </h1>
 
@@ -70,6 +78,6 @@ export default function TaskScreen() {
           task={selectedTask}
         />
       </div>
-    </>
+    </FallbackWrapper>
   );
 }

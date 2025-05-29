@@ -4,12 +4,12 @@ import { AuthContext, type User } from "./authContext";
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [userId, setUserId] = useState<string | null>(() => {
+  const [userId, setUserId] = useState<string>(() => {
     const storedUserId = localStorage.getItem("userId");
     return storedUserId ? JSON.parse(storedUserId) : null;
   });
 
-  const [userName, setUserName] = useState<string | null>(() => {
+  const [userName, setUserName] = useState<string>(() => {
     const storedUserName = localStorage.getItem("userName");
     return storedUserName ? JSON.parse(storedUserName) : null;
   });
@@ -22,8 +22,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       localStorage.setItem("userName", JSON.stringify(newUser.name));
       localStorage.setItem("token", newUser.token);
     } else {
-      setUserId(null);
-      setUserName(null);
+      setUserId("");
+      setUserName("");
       localStorage.removeItem("userId");
       localStorage.removeItem("userName");
       localStorage.removeItem("token");

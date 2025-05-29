@@ -2,12 +2,12 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/ui/components/button";
-import { Input } from "@/ui/components/input";
-import { Label } from "@/ui/components/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
 import { useLogin } from "../hooks/useAuth";
 import { useAuth } from "../context/authContext";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const loginSchema = z.object({
   email: z.string().email("Email inválido"),

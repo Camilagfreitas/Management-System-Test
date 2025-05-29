@@ -1,4 +1,10 @@
-import { Button } from "@/ui/components/button";
+import {
+  priorityColors,
+  translateCategoryAndPriority,
+} from "../../utils/taskUtils";
+import type { Task } from "../../types/task";
+import { useDeleteTask, useUpdateTask } from "../../hooks/useTask";
+import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
 import {
   Select,
@@ -6,13 +12,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/ui/components/select";
-import {
-  priorityColors,
-  translateCategoryAndPriority,
-} from "../../utils/taskUtils";
-import type { Task } from "../../types/task";
-import { useDeleteTask, useUpdateTask } from "../../hooks/useTask";
+} from "@/components/ui/select";
 
 interface TaskCardProps {
   task: Task;
