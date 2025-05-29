@@ -11,6 +11,7 @@ type AuthContextType = {
   userId: string;
   userName: string;
   setUser: (user: User | null) => void;
+  removeUser: () => void;
 };
 
 export const AuthContext = createContext<AuthContextType | undefined>(

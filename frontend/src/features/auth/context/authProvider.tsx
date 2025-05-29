@@ -30,8 +30,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
+  const handleRemoveUser = () => {
+    setUserId("");
+    setUserName("");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("token");
+  };
+
   return (
-    <AuthContext.Provider value={{ userName, userId, setUser: handleSetUser }}>
+    <AuthContext.Provider
+      value={{
+        userName,
+        userId,
+        setUser: handleSetUser,
+        removeUser: handleRemoveUser,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

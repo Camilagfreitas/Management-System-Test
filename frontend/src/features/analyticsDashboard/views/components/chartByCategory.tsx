@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import type { Task } from "@/features/taskDashboard/types/task";
-import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ChartByCategoryProps {
   tasks: Task[];

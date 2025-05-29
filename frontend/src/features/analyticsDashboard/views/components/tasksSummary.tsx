@@ -1,8 +1,8 @@
 import type { Task } from "@/features/taskDashboard/types/task";
-import { Card, CardTitle, CardContent } from "@/ui/components/card";
+import { Card, CardTitle, CardContent } from "@/components/ui/card";
 
 import { useGetTaskSummary } from "../../hooks/useAnalytics";
-import { Badge } from "@/ui/components/badge";
+import { Badge } from "@/components/ui/badge";
 
 interface TaskSummaryProps {
   tasks: Task[];

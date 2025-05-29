@@ -1,8 +1,9 @@
-import { Menu, Sheet } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/features/auth/context/authContext";
 import { Button } from "@/components/ui/button";
 import {
+  Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -11,7 +12,7 @@ import {
 
 export default function Header() {
   const navigate = useNavigate();
-  const { userName } = useAuth();
+  const { userName, removeUser } = useAuth();
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow px-6 py-4 z-2">
       <div className="flex items-center justify-between">
@@ -26,7 +27,10 @@ export default function Header() {
           </Button>
           <Button
             variant="ghost"
-            onClick={() => console.log("sair")}
+            onClick={() => {
+              removeUser();
+              navigate("/");
+            }}
             className="text-gray-500"
           >
             Sair
@@ -52,7 +56,10 @@ export default function Header() {
               </Button>
               <Button
                 variant="ghost"
-                onClick={() => console.log("sair")}
+                onClick={() => {
+                  removeUser();
+                  navigate("/");
+                }}
                 className="bottom-4 right-4 text-gray-500"
               >
                 Sair
