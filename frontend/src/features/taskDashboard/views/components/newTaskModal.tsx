@@ -25,8 +25,12 @@ interface NewTaskModalProps {
 const taskSchema = z.object({
   title: z.string().min(1, "Título obrigatório"),
   description: z.string().min(1, "Descrição obrigatória"),
-  category: z.string().min(1, "Categoria obrigatória"),
-  priority: z.enum(["High", "Medium", "Low"]),
+  category: z.enum(["Work", "Personal", "Study"], {
+    errorMap: () => ({ message: "Categoria é obrigatória" }),
+  }),
+  priority: z.enum(["High", "Medium", "Low"], {
+    errorMap: () => ({ message: "Prioridade é obrigatória" }),
+  }),
 });
 
 type TaskFormData = z.infer<typeof taskSchema>;
@@ -89,7 +93,11 @@ export default function NewTaskModal({ isOpen, onClose }: NewTaskModalProps) {
             </span>
           )}
 
-          <Select onValueChange={(value) => setValue("category", value)}>
+          <Select
+            onValueChange={(value) =>
+              setValue("category", value as "Work" | "Personal" | "Study")
+            }
+          >
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-100 text-gray-500">
               <SelectValue placeholder="Selecione uma categoria" />
             </SelectTrigger>

@@ -22,8 +22,12 @@ import {
 const taskSchema = z.object({
   title: z.string().min(1, "Título é obrigatório"),
   description: z.string().min(1, "Descrição é obrigatória"),
-  category: z.enum(["Work", "Personal", "Study"]),
-  priority: z.enum(["High", "Medium", "Low"]),
+  category: z.enum(["Work", "Personal", "Study"], {
+    errorMap: () => ({ message: "Categoria é obrigatória" }),
+  }),
+  priority: z.enum(["High", "Medium", "Low"], {
+    errorMap: () => ({ message: "Prioridade é obrigatória" }),
+  }),
 });
 
 type TaskForm = z.infer<typeof taskSchema>;
@@ -43,6 +47,7 @@ export default function EditTaskModal({
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
     reset,
   } = useForm<TaskForm>({
@@ -50,7 +55,7 @@ export default function EditTaskModal({
     defaultValues: {
       title: task.title,
       description: task.description,
-      category: task.category as "Work" | "Personal" | "Study",
+      category: task.category,
       priority: task.priority,
     },
   });
@@ -60,7 +65,7 @@ export default function EditTaskModal({
       {
         id: task.id,
         userId: task.userId,
-        status: task.status as "Pending" | "InProgress" | "Completed",
+        status: task.status,
         ...data,
       },
       {
@@ -106,7 +111,12 @@ export default function EditTaskModal({
             <p className="text-red-600">{errors.description.message}</p>
           )}
 
-          <Select {...register("category")} defaultValue={task.category}>
+          <Select
+            onValueChange={(value) =>
+              setValue("category", value as "Work" | "Personal" | "Study")
+            }
+            defaultValue={task.category}
+          >
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-100 text-gray-500">
               <SelectValue placeholder="Selecione uma categoria" />
             </SelectTrigger>
@@ -120,7 +130,12 @@ export default function EditTaskModal({
             <p className="text-red-600">{errors.category.message}</p>
           )}
 
-          <Select {...register("priority")} defaultValue={task.priority}>
+          <Select
+            onValueChange={(value) =>
+              setValue("priority", value as "High" | "Medium" | "Low")
+            }
+            defaultValue={task.priority}
+          >
             <SelectTrigger className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-100 text-gray-500">
               <SelectValue placeholder="Selecione a prioridade" />
             </SelectTrigger>

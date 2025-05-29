@@ -3,7 +3,7 @@ export type Task = {
   userId: string;
   title: string;
   description: string;
-  category: string;
+  category: "Work" | "Personal" | "Study";
   priority: "High" | "Medium" | "Low";
   status: "Pending" | "InProgress" | "Completed";
 };

@@ -1,6 +1,7 @@
 import api from "@/lib/api";
 import API_ROUTES from "@/services/apiRoutes";
 import type { Task } from "../types/task";
+
 export const createTask = async (task: Omit<Task, "id">) => {
   const response = await api.post(API_ROUTES.CREATE_TASK, task);
   return response.data;

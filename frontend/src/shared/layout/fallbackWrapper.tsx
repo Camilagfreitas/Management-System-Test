@@ -11,7 +11,6 @@ type FallbackWrapperProps = {
 export const FallbackWrapper: React.FC<FallbackWrapperProps> = ({
   isLoading,
   isError,
-  error,
   children,
 }) => {
   if (isLoading) {
@@ -26,8 +25,7 @@ export const FallbackWrapper: React.FC<FallbackWrapperProps> = ({
     return (
       <div className="flex items-center justify-center h-screen px-4">
         <p className="text-center text-red-600 text-lg">
-          {(error as Error)?.message ||
-            "Erro ao carregar os dados. Tente novamente mais tarde."}
+          Erro ao carregar os dados. Tente novamente mais tarde.
         </p>
       </div>
     );

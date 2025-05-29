@@ -7,11 +7,15 @@ export class TaskService {
   constructor(private taskRepository: TaskRepository) {}
 
   async getTasksByUserIdWithFilters(userId: string, filters: TaskQueryFilters): Promise<Task[]> {
-    const tasks = await this.taskRepository.getByUserIdWithFilters(userId, filters);
-    if (!tasks || tasks.length === 0) {
-      throw new AppError(404, 'Tasks not found');
+    try {
+      const tasks = await this.taskRepository.getByUserIdWithFilters(userId, filters);
+      return tasks ?? [];
+    } catch (err) {
+      if (err instanceof AppError) {
+        throw err;
+      }
+      throw new AppError(500, 'Error fetching tasks');
     }
-    return tasks;
   }
 
   async createTaskForUser(data: Omit<Task, 'id'>): Promise<Task> {

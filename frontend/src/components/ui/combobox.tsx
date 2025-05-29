@@ -1,12 +1,16 @@
 "use client";
 
 import * as React from "react";
-
 import { translateCategoryAndPriority } from "@/features/taskDashboard/utils/taskUtils";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 import { Button } from "./button";
-import { CommandEmpty, CommandGroup, CommandItem, CommandList } from "cmdk";
-import { Command } from "lucide-react";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandList,
+} from "./command";
 
 type FilterGroup = {
   group: string;
@@ -35,11 +39,9 @@ export function ComboboxPopover({ groups, selected, onChange }: Props) {
             variant="outline"
             className="w-[200px] justify-start border border-gray-300 rounded-lg text-gray-700 bg-white text-gray-500"
           >
-            {selected ? (
-              `Filtro: ${translateCategoryAndPriority(selected.value)}`
-            ) : (
-              <> Filtrar</>
-            )}
+            {selected?.value
+              ? `Filtro: ${translateCategoryAndPriority(selected.value)}`
+              : "Filtrar"}
           </Button>
         </PopoverTrigger>
         <PopoverContent
