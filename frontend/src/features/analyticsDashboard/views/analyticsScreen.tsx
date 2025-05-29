@@ -1,4 +1,3 @@
-import Header from "@/shared/components/header";
 import TaskSummary from "./components/tasksSummary";
 import { useFilteredTasks } from "@/features/taskDashboard/hooks/useTask";
 import ChartByStatus from "./components/chartByStatus";
@@ -11,7 +10,6 @@ export default function AnalyticsScreen() {
 
   return (
     <>
-      <Header />
       <div className="bg-gray-100 min-h-screen p-20 pt-36">
         <h1 className="text-3xl font-bold text-cyan-800 mb-6">
           Dashboard Analítico
