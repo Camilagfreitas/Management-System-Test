@@ -52,7 +52,7 @@ describe('AuthService', () => {
     (userRepoMock.getUserByEmail as any).mockResolvedValue(null);
 
     await expect(authService.login('notfound@example.com', 'any-password')).rejects.toBeInstanceOf(AppError);
-    await expect(authService.login('notfound@example.com', 'any-password')).rejects.toHaveProperty('status', 401);
+    await expect(authService.login('notfound@example.com', 'any-password')).rejects.toHaveProperty('statusCode', 401);
   });
 
   test('should throw AppError when password is invalid', async () => {
@@ -67,6 +67,6 @@ describe('AuthService', () => {
     (hashUtils.comparePassword as any).mockResolvedValue(false);
 
     await expect(authService.login('jane@example.com', 'wrong-password')).rejects.toBeInstanceOf(AppError);
-    await expect(authService.login('jane@example.com', 'wrong-password')).rejects.toHaveProperty('status', 401);
+    await expect(authService.login('jane@example.com', 'wrong-password')).rejects.toHaveProperty('statusCode', 401);
   });
 });

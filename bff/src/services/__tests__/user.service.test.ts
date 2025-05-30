@@ -45,7 +45,7 @@ describe('UserService', () => {
       (userRepoMock.getUserByEmail as any).mockResolvedValue(existingUser);
 
       await expect(service.createUser({ name: 'Bob', email: 'bob@example.com', password: 'pass123' })).rejects.toBeInstanceOf(AppError);
-      await expect(service.createUser({ name: 'Bob', email: 'bob@example.com', password: 'pass123' })).rejects.toHaveProperty('status', 409);
+      await expect(service.createUser({ name: 'Bob', email: 'bob@example.com', password: 'pass123' })).rejects.toHaveProperty('statusCode', 409);
     });
 
     test('should hash password and create user', async () => {

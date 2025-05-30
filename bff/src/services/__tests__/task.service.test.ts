@@ -67,7 +67,7 @@ describe('TaskService', () => {
           category: '',
           priority: 'high',
           status: 'pending'
-      })).rejects.toHaveProperty('status', 500);
+      })).rejects.toHaveProperty('statusCode', 500);
     });
   });
 
@@ -83,7 +83,7 @@ describe('TaskService', () => {
       (taskRepoMock.delete as any).mockResolvedValue(false);
 
       await expect(service.deleteTask('task-404')).rejects.toBeInstanceOf(AppError);
-      await expect(service.deleteTask('task-404')).rejects.toHaveProperty('status', 404);
+      await expect(service.deleteTask('task-404')).rejects.toHaveProperty('statusCode', 404);
     });
   });
 
@@ -101,7 +101,7 @@ describe('TaskService', () => {
       (taskRepoMock.update as any).mockResolvedValue(null);
 
       await expect(service.updateTask('task-404', { title: 'Nope' })).rejects.toBeInstanceOf(AppError);
-      await expect(service.updateTask('task-404', { title: 'Nope' })).rejects.toHaveProperty('status', 404);
+      await expect(service.updateTask('task-404', { title: 'Nope' })).rejects.toHaveProperty('statusCode', 404);
     });
   });
 
@@ -119,7 +119,7 @@ describe('TaskService', () => {
       (taskRepoMock.getById as any).mockResolvedValue(null);
 
       await expect(service.getById('missing')).rejects.toBeInstanceOf(AppError);
-      await expect(service.getById('missing')).rejects.toHaveProperty('status', 404);
+      await expect(service.getById('missing')).rejects.toHaveProperty('statusCode', 404);
     });
   });
 });
