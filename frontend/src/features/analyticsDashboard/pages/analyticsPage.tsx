@@ -3,13 +3,14 @@ import { useFilteredTasks } from "@/features/taskDashboard/hooks/useTask";
 import ChartByStatus from "../components/chartByStatus";
 import ChartByCategory from "../components/chartByCategory";
 import { useAuth } from "@/features/auth/context/authContext";
+import { FallbackWrapper } from "@/shared/layout/fallbackWrapper";
 
 export default function AnalyticsPage() {
   const { userId } = useAuth();
-  const { data: tasks } = useFilteredTasks(userId);
+  const { data: tasks, isError, isLoading } = useFilteredTasks(userId);
 
   return (
-    <>
+    <FallbackWrapper isError={isError} isLoading={isLoading}>
       <div className="bg-gray-100 min-h-screen p-20 pt-36">
         <h1 className="text-4xl text-cyan-800 mb-6 text-center">
           Dashboard Analítico
@@ -22,6 +23,6 @@ export default function AnalyticsPage() {
 
         <TaskSummary tasks={tasks ?? []} />
       </div>
-    </>
+    </FallbackWrapper>
   );
 }
