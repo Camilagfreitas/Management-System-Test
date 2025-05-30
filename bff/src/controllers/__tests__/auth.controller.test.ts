@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, expect, vi, beforeEach, test } from 'vitest';
 import { AuthService } from '../../services/auth.service';
 import { AuthController } from '../auth.controller';
 import type { Request, Response, NextFunction } from 'express';

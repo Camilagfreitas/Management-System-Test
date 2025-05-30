@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, expect, vi, beforeEach, test } from 'vitest';
 import { TaskRepository } from '../../repositories/task.repository';
 import { TaskService } from '../task.service';
 import { AppError } from '../../errors/app-error';

@@ -1,5 +1,5 @@
 // tests/middlewares/errorHandler.test.ts
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, expect, vi, beforeEach, test } from 'vitest';
 import { AppError } from '../../errors/app-error';
 import { errorHandler } from '../error.middleware';
 import type { Request, Response } from 'express';

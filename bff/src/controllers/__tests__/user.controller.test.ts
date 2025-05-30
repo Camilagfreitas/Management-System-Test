@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, expect, vi, beforeEach, test } from 'vitest';
 import { UserService } from '../../services/user.service';
 import { UserController } from '../user.controller';
 import type { Request, Response } from 'express';

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe,  expect, vi, beforeEach, test } from 'vitest';
 import { UserRepository } from '../../repositories/user.repository';
 import { UserService } from '../user.service';
 import * as hashUtils from '../../utils/hash'

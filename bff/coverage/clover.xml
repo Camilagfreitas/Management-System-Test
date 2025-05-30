@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1748488511581" clover="3.2.0">
+  <project timestamp="1748488511581" name="All files">
+    <metrics statements="372" coveredstatements="157" conditionals="61" coveredconditionals="55" methods="41" coveredmethods="31" elements="474" coveredelements="243" complexity="0" loc="372" ncloc="372" packages="12" files="25" classes="25"/>
+    <package name="bff">
+      <metrics statements="19" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="server.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/server.ts">
+        <metrics statements="19" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src">
+      <metrics statements="46" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="swagger.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/swagger.ts">
+        <metrics statements="46" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src.controllers">
+      <metrics statements="87" coveredstatements="0" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="auth.controller.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/controllers/auth.controller.ts">
+        <metrics statements="13" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+      <file name="task.controller.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/controllers/task.controller.ts">
+        <metrics statements="50" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+      </file>
+      <file name="user.controller.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/controllers/user.controller.ts">
+        <metrics statements="24" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src.docs">
+      <metrics statements="0" coveredstatements="0" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="auth.docs.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/docs/auth.docs.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      </file>
+      <file name="taks.docs.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/docs/taks.docs.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      </file>
+      <file name="user.docs.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/docs/user.docs.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      </file>
+    </package>
+    <package name="bff.src.errors">
+      <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="app-error.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/errors/app-error.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="16" type="stmt"/>
+        <line num="6" count="16" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src.middlewares">
+      <metrics statements="24" coveredstatements="0" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="auth.middleware.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/middlewares/auth.middleware.ts">
+        <metrics statements="15" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+      <file name="error.middleware.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/middlewares/error.middleware.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src.models">
+      <metrics statements="0" coveredstatements="0" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="task.model.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/models/task.model.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      </file>
+      <file name="user.model.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/models/user.model.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      </file>
+    </package>
+    <package name="bff.src.repositories">
+      <metrics statements="67" coveredstatements="67" conditionals="17" coveredconditionals="17" methods="8" coveredmethods="8"/>
+      <file name="task.repository.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/repositories/task.repository.ts">
+        <metrics statements="41" coveredstatements="41" conditionals="8" coveredconditionals="8" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="34" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="45" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+      <file name="user.repository.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/repositories/user.repository.ts">
+        <metrics statements="26" coveredstatements="26" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src.routes">
+      <metrics statements="37" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="auth.routes.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/routes/auth.routes.ts">
+        <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/routes/index.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+      <file name="task.routes.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/routes/task.routes.ts">
+        <metrics statements="13" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+      </file>
+      <file name="user.routes.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/routes/user.routes.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src.services">
+      <metrics statements="77" coveredstatements="77" conditionals="26" coveredconditionals="26" methods="11" coveredmethods="11"/>
+      <file name="auth.service.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/services/auth.service.ts">
+        <metrics statements="19" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+      </file>
+      <file name="task.service.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/services/task.service.ts">
+        <metrics statements="38" coveredstatements="38" conditionals="15" coveredconditionals="15" methods="6" coveredmethods="6"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="27" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="32" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="40" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+      <file name="user.service.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/services/user.service.ts">
+        <metrics statements="20" coveredstatements="20" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="bff.src.types">
+      <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="task-filters.type.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/types/task-filters.type.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      </file>
+    </package>
+    <package name="bff.src.utils">
+      <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="hash.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/utils/hash.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="jwt.ts" path="/Users/camilafreitas/Documents/Management-System-Test/bff/src/utils/jwt.ts">
+        <metrics statements="6" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -1,5 +1,5 @@
 // tests/middlewares/ensureAuth.test.ts
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, expect, vi, beforeEach, test } from 'vitest';
 import { ensureAuth } from '../auth.middleware';
 import { AppError } from '../../errors/app-error';
 import * as jwtUtils from '../../utils/jwt';
@@ -23,7 +23,7 @@ describe('ensureAuth middleware', () => {
       ensureAuth(mockReq, mockRes, mockNext);
     } catch (err) {
         if (err instanceof AppError) {
-            expect(err.status).toBe(401);
+            expect(err.statusCode).toBe(401);
             expect(err.message).toBe('Token not provided');
         } 
     }
@@ -36,7 +36,7 @@ describe('ensureAuth middleware', () => {
       ensureAuth(mockReq, mockRes, mockNext);
     } catch (err) {
       if (err instanceof AppError) {
-        expect(err.status).toBe(401);
+        expect(err.statusCode).toBe(401);
         expect(err.message).toBe('Token not provided');
       } 
     }
@@ -54,7 +54,7 @@ describe('ensureAuth middleware', () => {
       ensureAuth(mockReq, mockRes, mockNext);
     } catch (err) {
       if (err instanceof AppError) {
-        expect(err.status).toBe(401);
+        expect(err.statusCode).toBe(401);
         expect(err.message).toBe('Invalid token');
       } 
     }

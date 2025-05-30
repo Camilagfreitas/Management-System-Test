@@ -1,82 +1,94 @@
-# Management System: BFF + Frontend
+# Management System – BFF + Frontend
 
-Este projeto é um monorepo que contém dois principais pacotes:
+Esta é uma aplicação de **gerenciamento de tarefas**, que também oferece um **dashboard analítico** para acompanhamento e visualização do progresso das atividades.
 
-- **BFF**: Backend For Frontend usando Node.js, Express e JSON Server (mock API).
-- **Frontend**: Aplicação React usando Vite.
+Este repositório é um **monorepo** que contém dois pacotes principais:
 
----
-
-## Tecnologias
-
-- **BFF**: Node.js, Express, JSON Server
-- **Frontend**: React, Vite
+- **BFF** (Backend For Frontend): construído com Node.js, Express e JSON Server para simulação de APIs.
+- **Frontend**: aplicação desenvolvida em React com Vite.
 
 ---
 
-## Como rodar o projeto
+## 🛠 Tecnologias Utilizadas
 
-### 1. Instalar dependências
+**BFF:**
 
-Execute o comando abaixo nas duas pastas do projeto (`bff` e `frontend`):
+- Node.js
+- Express
+- JSON Server (Mock API)
+- Swagger (Documentação da API)
+
+**Frontend:**
+
+- React
+- Vite
+- Axios
+- React Router
+- Radix (Shadcn)
+
+---
+
+## Como Executar o Projeto
+
+### 1. Instalar as dependências
+
+**BFF:**
 
 ```bash
+cd bff
+npm install
+```
+
+**Frontend:**
+
+```bash
+cd frontend
 npm install
 ```
 
 ---
 
-### 2. Rodar o BFF (mock + servidor express)
+### 2. Iniciar o BFF (Mock API + Servidor Express)
 
-Navegue até a pasta `bff`:
-
-```bash
-cd bff
-```
-
-Execute os comandos para rodar o mock server e o backend:
+No diretório `bff`, execute:
 
 ```bash
 npm run mock
 npm run dev
 ```
 
-Após rodar o BFF, a documentação da API via Swagger estará disponível em:
-
-```
-http://localhost:3000/api-docs/#/
-```
+A documentação Swagger da API estará disponível em:  
+[http://localhost:3000/api-docs/#/](http://localhost:3000/api-docs/#/)
 
 ---
 
-### 3. Rodar o frontend
+### 3. Iniciar o Frontend
 
-Navegue até a pasta `frontend`:
-
-```bash
-cd frontend
-```
-
-Execute o comando para rodar a aplicação React:
+No diretório `frontend`, execute:
 
 ```bash
 npm run dev
 ```
 
+A aplicação React estará disponível em:  
+[http://localhost:5173/](http://localhost:5173/)
+
 ---
 
-## Como rodar os testes
+### 4. Acessar a Plataforma
 
-Para rodar os testes, execute o seguinte comando nas pastas `bff` e `frontend` separadamente:
+1. Acesse [http://localhost:5173/](http://localhost:5173/)
+2. Clique em **"Cadastre-se"** para criar uma conta.
+3. Faça login com os dados cadastrados para acessar a plataforma.
+
+---
+
+## Executar os Testes
+
+Em ambos os diretórios `bff` e `frontend`, execute:
 
 ```bash
 npm run test
 ```
 
 ---
-
-## Observações
-
-- O mock server no BFF serve para simular APIs e facilitar o desenvolvimento frontend.
-- A aplicação React consome as APIs fornecidas pelo BFF.
-- A documentação Swagger ajuda a visualizar e testar as rotas da API do BFF.

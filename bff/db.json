@@ -94,6 +94,24 @@
       "category": "other test",
       "priority": "high",
       "status": "completed"
+    },
+    {
+      "id": "a010b5ba-4d3b-4989-a7c9-e5bb22681dbd",
+      "title": "Estudar React",
+      "description": "Estudar react",
+      "category": "Work",
+      "priority": "High",
+      "status": "Pending",
+      "userId": "1"
+    },
+    {
+      "id": "71d721c1-ee4f-433c-8613-d9c808a98efd",
+      "title": "Jantar",
+      "description": "Jantar",
+      "category": "Personal",
+      "priority": "Medium",
+      "status": "Completed",
+      "userId": "1"
     }
   ]
 }
