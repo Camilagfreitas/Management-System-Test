@@ -9,6 +9,7 @@ import {
   CommandItem,
   CommandList,
 } from "./command";
+import { Search } from "lucide-react";
 
 type FilterGroup = {
   group: string;
@@ -34,13 +35,16 @@ export function ComboboxPopover({ groups, selected, onChange }: Props) {
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            className="w-[200px] justify-start border border-gray-300 rounded-lg text-gray-700 bg-white text-gray-500"
+            className="w-70 justify-start border border-gray-300 rounded-lg text-gray-700 bg-white text-gray-500"
             aria-label="Filter Button"
           >
             {selected?.value ? (
               `Filtro: ${translateCategoryAndPriority(selected.value)}`
             ) : (
-              <> Filtrar</>
+              <>
+                <Search />
+                Filtrar
+              </>
             )}
           </Button>
         </PopoverTrigger>

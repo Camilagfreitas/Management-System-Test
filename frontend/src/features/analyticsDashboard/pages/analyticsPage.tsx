@@ -11,7 +11,7 @@ export default function AnalyticsPage() {
   return (
     <>
       <div className="bg-gray-100 min-h-screen p-20 pt-36">
-        <h1 className="text-3xl font-bold text-cyan-800 mb-6">
+        <h1 className="text-4xl text-cyan-800 mb-6 text-center">
           Dashboard Analítico
         </h1>
 

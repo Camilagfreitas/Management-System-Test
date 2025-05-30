@@ -105,12 +105,12 @@
       "userId": "1"
     },
     {
-      "id": "71d721c1-ee4f-433c-8613-d9c808a98efd",
-      "title": "Jantar",
-      "description": "Jantar",
-      "category": "Personal",
-      "priority": "Medium",
-      "status": "Completed",
+      "id": "bc721825-921c-4150-9b02-a3dc5d3c0572",
+      "title": "Estudar Angular",
+      "description": "Estudar",
+      "category": "Study",
+      "priority": "Low",
+      "status": "Pending",
       "userId": "1"
     }
   ]

@@ -47,12 +47,12 @@ export default function TaskPage() {
           </Button>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center pt-6 justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center pt-6 gap-12">
           <Input
             placeholder="Buscar por título..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full sm:max-w-md border border-gray-300 rounded-2xl text-gray-700 bg-white h-11"
+            className="w-80 sm:max-w-md border border-gray-300 rounded-l text-gray-700 bg-white"
           />
           <ComboboxPopover
             groups={filterGroups}

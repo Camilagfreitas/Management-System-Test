@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { vi, describe, it, expect, beforeEach } from 'vitest';
+import { vi, describe, expect, beforeEach, test } from 'vitest';
 import qs from 'qs';
 import { TaskRepository } from '../task.repository';
 

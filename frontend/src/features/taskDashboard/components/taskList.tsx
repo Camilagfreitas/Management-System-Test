@@ -31,7 +31,7 @@ export default function TaskList({
   };
 
   return (
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+    <div className="mx-auto py-8 space-y-8">
       {Object.entries(groupedTasks).map(([status, taskList]) => (
         <div key={status}>
           <h2 className="text-xl font-bold text-cyan-800 mb-4">
